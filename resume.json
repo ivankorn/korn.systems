@@ -1,0 +1,241 @@
+{
+  "basics": {
+    "name": "Ivan Kornienko",
+    "label": "Senior DevSecOps & Cloud Solutions Architect",
+    "image": "",
+    "email": "ivan.kornienko@gmail.com",
+    "phone": "+380(95)434-95-08",
+    "url": "https://korn.systems",
+    "summary": "Senior Cloud Infrastructure Consultant with 19 years in IT, including 14 years contracting for top US/EU companies. Expert in Cloud Solutions Architecture (GCP, AWS), automated CI/CD/Sec pipelines, high-scale Kubernetes management, GitOps, MLOps, and AI Reliability (scaling LLM workloads, Karpenter, cost optimization). Contributor to Google Cloud Foundation Toolkit.",
+    "location": {
+      "city": "Obukhiv",
+      "region": "Kyiv Region",
+      "countryCode": "UA",
+      "postalCode": "08700"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "ivankornienko",
+        "url": "https://www.linkedin.com/in/ivankornienko"
+      },
+      {
+        "network": "GitHub",
+        "username": "ivankorn",
+        "url": "https://github.com/ivankorn"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "METRO Digital",
+      "position": "Engineering Consultant (Contractor)",
+      "url": "https://metro.digital",
+      "startDate": "2025-06",
+      "endDate": "2025-12",
+      "summary": "Kubernetes migration into GCP, NoSQL database migration, GKE optimization.",
+      "highlights": [
+        "Designed detailed GCP migration and NoSQL database migration plans.",
+        "Successfully migrated a fleet of nearly 100 microservices into GCP.",
+        "Developed custom Terraform modules and Kustomize templates.",
+        "Optimized GKE clusters for performance and cloud costs.",
+        "Mentored full-time engineers in modern DevOps practices."
+      ]
+    },
+    {
+      "name": "Voyc AI",
+      "position": "Engineering Consultant (Contractor)",
+      "url": "https://voyc.ai",
+      "startDate": "2025-05",
+      "endDate": "2025-06",
+      "summary": "AI-powered compliance monitoring AWS cloud design and automation.",
+      "highlights": [
+        "Designed highly available and cost-efficient AWS Cloud Architecture.",
+        "Automated infrastructure provisioning using OpenTofu, Terraform, and Terragrunt.",
+        "Implemented Karpenter for AWS EKS to achieve dynamic, cost-optimized scaling of Kubernetes nodes for AI workloads."
+      ]
+    },
+    {
+      "name": "METRO Digital",
+      "position": "Engineering Consultant (Contractor)",
+      "url": "https://metro.digital",
+      "startDate": "2021-09",
+      "endDate": "2025-03",
+      "summary": "GitLab to GitHub migration, internal CD to ArgoCD migration, GCP migration, and Gateway API implementation.",
+      "highlights": [
+        "Implemented system decomposition using a structured 5-layer infrastructure pattern in Terraform.",
+        "Implemented GitOps (tag-based deployment, PR builds, merge builds) with GCP Cloud Build.",
+        "Developed reusable Terraform modules and Helm charts with fully automated CI/CD checks.",
+        "Migrated secrets to GCP Secret Manager, automated using Jenkins, Terraform, and SOPS.",
+        "Migrated microservice deployments to ArgoCD with an app-of-apps pattern for about 100 microservices.",
+        "Replaced HAProxy load balancers with GCP Load Balancers and GCP Private Service Connect (PSC)."
+      ]
+    },
+    {
+      "name": "Elsewhen Ltd",
+      "position": "Engineering Consultant (Contractor)",
+      "url": "https://elsewhen.com",
+      "startDate": "2021-07",
+      "endDate": "2021-09",
+      "summary": "ETL pipeline implementation and IaC design for an advertisement firm.",
+      "highlights": [
+        "Redesigned Cloud Architecture, Continuous Integration, and IaC pipelines.",
+        "Implemented System Decomposition with a 5-layer infrastructure in Terraform.",
+        "Developed ETL pipelines in Python for Google Cloud Composer (Apache Airflow).",
+        "Migrated Cloud Composer from Apache Airflow 1 to Airflow 2."
+      ]
+    },
+    {
+      "name": "GlobalLogic",
+      "position": "DevOps Tech Lead / Cloud Architect",
+      "url": "https://globallogic.com",
+      "startDate": "2019-01",
+      "endDate": "2021-07",
+      "summary": "Led DevOps transformation programs, cloud architecture setups, training courses, and Google CFT development.",
+      "highlights": [
+        "Planned and driven DevOps transformation for American Robotics Corp using AWS (EKS, Lambda, S3, Terragrunt, ArgoCD).",
+        "Managed DevOps scope and IAM organization for a next-gen TV platform in GCP, deploying GKE, EKS, and Azure DevOps CI/CD pipelines.",
+        "Built a Bare-Metal/Public Cloud Hybrid SDLC accelerator with Kubernetes and ArgoCD.",
+        "Designed Kiev's Smart City Platform (Green Wave) deploying GKE, Cloud Functions, and Cloud Build.",
+        "Contributed official modules to the Google Cloud Foundation Toolkit and HashiCorp organizations.",
+        "DevOps Training Lead: Wrote syllabus and coached trainee systems engineers in Linux, networking, python, and cloud."
+      ]
+    },
+    {
+      "name": "EPAM Systems",
+      "position": "Senior DevOps & System Engineer",
+      "url": "https://epam.com",
+      "startDate": "2015-08",
+      "endDate": "2018-12",
+      "summary": "Kubernetes migrations, CI/CD consulting, mentoring, and environment configuration for major US clients.",
+      "highlights": [
+        "Drove migration to Kubernetes in California for an American MLM client, writing Helm charts and Ansible roles.",
+        "Developed CI/CD solutions in Connecticut for a major American Investment Management firm.",
+        "Mentored trainee engineers, achieving a 5/5 score for lectures on DevOps, Linux, and IaC.",
+        "Maintained and optimized multi-node Hybris and Apache e-commerce clusters using Ansible, Python, and Jenkins DSL."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "National Technical University of Ukraine 'Kyiv Polytechnic Institute' (IASA)",
+      "url": "https://kpi.ua",
+      "area": "Computer Science (Computer Systems Engineering)",
+      "studyType": "Master",
+      "startDate": "2008",
+      "endDate": "2010",
+      "gpa": "",
+      "courses": []
+    },
+    {
+      "institution": "National Technical University of Ukraine 'Kyiv Polytechnic Institute' (IASA)",
+      "url": "https://kpi.ua",
+      "area": "Computer Science",
+      "studyType": "Bachelor",
+      "startDate": "2004",
+      "endDate": "2008",
+      "gpa": "",
+      "courses": []
+    }
+  ],
+  "skills": [
+    {
+      "name": "Cloud Providers",
+      "level": "Expert",
+      "keywords": [
+        "Google Cloud Platform (GCP)",
+        "Amazon Web Services (AWS)",
+        "Azure",
+        "Hybrid Clouds"
+      ]
+    },
+    {
+      "name": "Infrastructure as Code",
+      "level": "Expert",
+      "keywords": [
+        "Terraform",
+        "OpenTofu",
+        "Terragrunt",
+        "Ansible",
+        "Chef",
+        "Helm"
+      ]
+    },
+    {
+      "name": "Containerization & Orchestration",
+      "level": "Expert",
+      "keywords": [
+        "Kubernetes",
+        "GKE",
+        "EKS",
+        "AKS",
+        "Docker",
+        "ArgoCD",
+        "Gateway API"
+      ]
+    },
+    {
+      "name": "CI/CD & DevSecOps",
+      "level": "Expert",
+      "keywords": [
+        "GitHub Actions",
+        "GitLab CI",
+        "Jenkins",
+        "Azure DevOps",
+        "Secret Manager",
+        "SOPS",
+        "Trivy"
+      ]
+    },
+    {
+      "name": "MLOps & AI Reliability",
+      "level": "Senior",
+      "keywords": [
+        "Karpenter",
+        "GPU Scaling",
+        "Inference Scaling",
+        "LLM Infrastructure"
+      ]
+    },
+    {
+      "name": "Languages",
+      "level": "Senior",
+      "keywords": ["Python", "Groovy", "Bash", "Golang", "HCL2"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Professional working proficiency"
+    },
+    {
+      "language": "Ukrainian",
+      "fluency": "Native"
+    },
+    {
+      "language": "Russian",
+      "fluency": "Native"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Technology",
+      "keywords": [
+        "Artificial Intelligence",
+        "Linux",
+        "Programming",
+        "Edge Computing"
+      ]
+    },
+    {
+      "name": "Hobbies",
+      "keywords": [
+        "Science-fiction",
+        "Literature",
+        "Documentaries",
+        "Art",
+        "Flowers"
+      ]
+    }
+  ]
+}

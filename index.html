@@ -1,0 +1,823 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Ivan Kornienko | Senior DevSecOps Consultant & Cloud Solutions Architect
+    </title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Professional portfolio and services of Ivan Kornienko, a Senior DevOps, DevSecOps, SRE, and Cloud Solutions Architect contractor. Specialized in GCP, AWS, Kubernetes, GitOps, MLOps, and AI Reliability."
+    />
+    <meta
+      name="keywords"
+      content="DevOps, DevSecOps, SRE, Cloud Architect, MLOps, AI Reliability, Kubernetes, GCP, AWS, Terraform, OpenTofu, ArgoCD, GitOps, Contractor, Freelance, Consultant"
+    />
+    <meta name="author" content="Ivan Kornienko" />
+    <link rel="canonical" href="https://korn.systems/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://korn.systems/" />
+    <meta
+      property="og:title"
+      content="Ivan Kornienko | Senior DevSecOps & Cloud Solutions Architect"
+    />
+    <meta
+      property="og:description"
+      content="Senior Cloud Infrastructure Contractor with 19 years in IT. Delivering scalable, secure cloud platforms (GCP, AWS, Azure), Kubernetes GitOps, MLOps, and cost optimization."
+    />
+    <meta
+      property="og:image"
+      content="https://korn.systems/assets/og-preview.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://korn.systems/" />
+    <meta
+      property="twitter:title"
+      content="Ivan Kornienko | Senior DevSecOps & Cloud Solutions Architect"
+    />
+    <meta
+      property="twitter:description"
+      content="Senior Cloud Infrastructure Contractor with 19 years in IT. Delivering scalable, secure cloud platforms (GCP, AWS, Azure), Kubernetes GitOps, MLOps, and cost optimization."
+    />
+    <meta
+      property="twitter:image"
+      content="https://korn.systems/assets/og-preview.png"
+    />
+
+    <!-- AI Agent Discoverability Links -->
+    <link
+      rel="alternate"
+      type="text/markdown"
+      href="https://korn.systems/resume.md"
+      title="Markdown Resume (For AI Agents)"
+    />
+    <link
+      rel="alternate"
+      type="application/json"
+      href="https://korn.systems/resume.json"
+      title="JSON Resume (For LLM Scrapers)"
+    />
+    <link
+      rel="index"
+      type="text/plain"
+      href="https://korn.systems/llms.txt"
+      title="AI Agent Sitemap"
+    />
+
+    <!-- Styling -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Schema.org Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ivan Kornienko",
+        "jobTitle": "Senior DevSecOps Consultant & Cloud Solutions Architect",
+        "url": "https://korn.systems",
+        "email": "ivan.kornienko@gmail.com",
+        "telephone": "+380-95-434-95-08",
+        "nationality": "Ukrainian",
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "National Technical University of Ukraine 'Kyiv Polytechnic Institute'"
+        },
+        "description": "Senior DevOps, DevSecOps, SRE, and Cloud Architect with 19 years in IT, specializing in GCP, AWS, Kubernetes scaling, GitOps, MLOps, and AI platform reliability.",
+        "sameAs": [
+          "https://www.linkedin.com/in/ivankornienko",
+          "https://github.com/ivankorn"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Korn Systems",
+        "url": "https://korn.systems",
+        "logo": "https://korn.systems/logo.png",
+        "image": "https://korn.systems/assets/og-preview.png",
+        "telephone": "+380-95-434-95-08",
+        "priceRange": "$$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Zarichna str",
+          "addressLocality": "Obukhiv",
+          "addressRegion": "Kyiv Region",
+          "postalCode": "08700",
+          "addressCountry": "UA"
+        },
+        "knowsAbout": [
+          "DevOps Transformation",
+          "DevSecOps Audits & Implementations",
+          "SRE & High Availability Architecture",
+          "Cloud Migration (AWS, GCP)",
+          "Kubernetes & Platform Engineering",
+          "MLOps & AI Infrastructure Scalability",
+          "Infrastructure as Code (IaC)"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Background Lights -->
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+
+    <!-- Sticky Header -->
+    <header id="header">
+      <div class="container nav-container">
+        <a href="#" class="logo">KORN<span class="dot">.</span>SYSTEMS</a>
+        <nav aria-label="Main Navigation">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#expertise">Expertise</a></li>
+            <li><a href="#case-studies">Case Studies</a></li>
+            <li><a href="#roi-calc">DevOps ROI</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-cta">
+          <div
+            class="availability-badge"
+            aria-label="Status: Available for contracts"
+          >
+            <span class="pulse-dot"></span>
+            Available for Contracts
+          </div>
+          <a href="#booking-modal" class="btn btn-primary open-booking"
+            >Book a Call</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section id="hero" class="container hero">
+        <div class="hero-tagline">DevSecOps // SRE // Cloud Architect</div>
+        <h1>
+          Engineering
+          <span class="gradient-text">Resilient Cloud Platforms</span><br />
+          & Automated Pipelines
+        </h1>
+        <p class="hero-description">
+          19+ years in IT delivering cloud infrastructure from scratch to
+          production. Expert in AWS & GCP migration, GitOps automation,
+          cost-effective Kubernetes autoscaling, and robust MLOps reliability.
+        </p>
+        <div class="hero-actions">
+          <a href="#booking-modal" class="btn btn-primary open-booking"
+            >Schedule Consultation</a
+          >
+          <a href="#expertise" class="btn btn-secondary">Explore Expertise</a>
+        </div>
+
+        <!-- Terminal Component -->
+        <div class="terminal-window" aria-hidden="true">
+          <div class="terminal-header">
+            <div class="terminal-buttons">
+              <span class="t-btn t-close"></span>
+              <span class="t-btn t-min"></span>
+              <span class="t-btn t-max"></span>
+            </div>
+            <div class="terminal-title">bash - korn.systems</div>
+          </div>
+          <div class="terminal-body" id="terminal-body">
+            <!-- Simulated via JS -->
+            <div class="t-line">
+              <span class="t-prompt">$</span> <span class="t-cursor"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Stats Section -->
+      <section id="about" class="container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number gradient-text">19+</div>
+            <div class="stat-label">Years in IT</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number gradient-text">14+</div>
+            <div class="stat-label">Years Contracting</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number gradient-text">100+</div>
+            <div class="stat-label">Microservices Migrated</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number gradient-text">30%+</div>
+            <div class="stat-label">Avg Cloud Cost Reduction</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Expertise Section -->
+      <section id="expertise">
+        <div class="container">
+          <h2><span class="gradient-text">Core Specializations</span></h2>
+          <p class="section-subtitle">
+            High-end architecture and operations designed for security,
+            velocity, and sub-millisecond reliability.
+          </p>
+
+          <div class="expertise-grid">
+            <!-- Card 1: Cloud Solutions Architect -->
+            <div class="expertise-card">
+              <div class="expertise-icon">☁️</div>
+              <h3>Cloud Solutions Architecture</h3>
+              <p>
+                Designing secure multi-cloud and hybrid environments across GCP,
+                AWS, and Azure. Specialized in cloud migrations, organization
+                structure, and Google Cloud Foundation Toolkit compliance.
+              </p>
+              <div class="tag-list">
+                <span class="tag">GCP</span>
+                <span class="tag">AWS</span>
+                <span class="tag">Terraform</span>
+                <span class="tag">OpenTofu</span>
+                <span class="tag">Terragrunt</span>
+                <span class="tag">VPC Routing</span>
+              </div>
+            </div>
+
+            <!-- Card 2: DevSecOps & GitOps -->
+            <div class="expertise-card">
+              <div class="expertise-icon">🛡️</div>
+              <h3>DevSecOps & GitOps</h3>
+              <p>
+                Automating deployment pipelines with built-in security scans.
+                Implementation of secure secrets management, automated
+                vulnerability scanning, tag-based GitOps deployment, and
+                environment parity.
+              </p>
+              <div class="tag-list">
+                <span class="tag">ArgoCD</span>
+                <span class="tag">GitHub Actions</span>
+                <span class="tag">GitLab CI/CD</span>
+                <span class="tag">Secret Manager</span>
+                <span class="tag">SOPS</span>
+                <span class="tag">Trivy</span>
+              </div>
+            </div>
+
+            <!-- Card 3: Kubernetes & Platform Engineering -->
+            <div class="expertise-card">
+              <div class="expertise-icon">☸️</div>
+              <h3>Kubernetes & Platform Engineering</h3>
+              <p>
+                Engineering robust internal developer platforms. Designing
+                reusable Helm charts, implementing Gateway API, automated
+                workload autoscaling, and migrating legacy services to
+                cloud-native microservices.
+              </p>
+              <div class="tag-list">
+                <span class="tag">GKE</span>
+                <span class="tag">EKS</span>
+                <span class="tag">Helm 3</span>
+                <span class="tag">Gateway API</span>
+                <span class="tag">Kustomize</span>
+                <span class="tag">K3s</span>
+              </div>
+            </div>
+
+            <!-- Card 4: MLOps & AI Reliability -->
+            <div class="expertise-card">
+              <div class="expertise-icon">🤖</div>
+              <h3>MLOps & AI Reliability</h3>
+              <p>
+                Building high-performance compute infrastructure for AI
+                workloads. Setting up EKS with Karpenter for fast,
+                cost-efficient scaling of GPU nodes, setting up inference
+                pipelines, and compliance monitoring.
+              </p>
+              <div class="tag-list">
+                <span class="tag">Karpenter</span>
+                <span class="tag">GPU Scaling</span>
+                <span class="tag">AWS ECS</span>
+                <span class="tag">Inference Platforms</span>
+                <span class="tag">Cost Optimization</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Case Studies Section -->
+      <section id="case-studies">
+        <div class="container">
+          <h2><span class="gradient-text">Featured Case Studies</span></h2>
+          <p class="section-subtitle">
+            Real-world production workloads migrated, scaled, and secured for
+            global clients.
+          </p>
+
+          <div class="case-studies-grid">
+            <!-- Case 1 -->
+            <div class="case-card">
+              <div>
+                <div class="case-meta">
+                  <span>METRO Digital</span>
+                  <span>GCP / GKE</span>
+                </div>
+                <h3>Kubernetes & GitOps Migration</h3>
+                <p>
+                  Designed the GCP migration path and GitOps deployment logic
+                  for a fleet of nearly 100 microservices. Replaced internal CD
+                  tools with ArgoCD and migrated secrets to Google Secret
+                  Manager using SOPS and Jenkins integration.
+                </p>
+              </div>
+              <div class="tag-list">
+                <span class="tag">ArgoCD</span>
+                <span class="tag">GKE Auto-Scaling</span>
+                <span class="tag">SOPS</span>
+              </div>
+            </div>
+
+            <!-- Case 2 -->
+            <div class="case-card">
+              <div>
+                <div class="case-meta">
+                  <span>Voyc AI</span>
+                  <span>AWS / EKS</span>
+                </div>
+                <h3>AI-Powered Scaling Architecture</h3>
+                <p>
+                  Designed and provisioned AWS cloud architecture for AI-powered
+                  compliance monitoring. Automated complete infrastructure using
+                  OpenTofu, Terraform, and Terragrunt, deploying EKS with
+                  Karpenter for optimal GPU scaling.
+                </p>
+              </div>
+              <div class="tag-list">
+                <span class="tag">OpenTofu</span>
+                <span class="tag">Karpenter</span>
+                <span class="tag">GPU Instances</span>
+              </div>
+            </div>
+
+            <!-- Case 3 -->
+            <div class="case-card">
+              <div>
+                <div class="case-meta">
+                  <span>Google CFT</span>
+                  <span>Open Source</span>
+                </div>
+                <h3>Cloud Foundation Toolkit</h3>
+                <p>
+                  Contributor to Google Cloud Platform's official Terraform and
+                  Deployment Manager modules. Developed HCL modules, custom
+                  tests, and automated integration builds within the HashiCorp
+                  ecosystem.
+                </p>
+              </div>
+              <div class="tag-list">
+                <span class="tag">Terraform Modules</span>
+                <span class="tag">Google Org</span>
+                <span class="tag">Go Tests</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DevOps ROI & Cost Calculator -->
+      <section id="roi-calc">
+        <div class="container">
+          <h2><span class="gradient-text">DevOps ROI Calculator</span></h2>
+          <p class="section-subtitle">
+            Estimate your potential annual savings and engineering velocity
+            improvements with expert infrastructure optimization.
+          </p>
+
+          <div class="calculator-panel">
+            <div class="calc-inputs">
+              <!-- Input 1 -->
+              <div class="calc-group">
+                <label for="cloud-spend">
+                  <span>Monthly Cloud Spend:</span>
+                  <span id="cloud-spend-val" class="calc-val">$15,000</span>
+                </label>
+                <input
+                  type="range"
+                  id="cloud-spend"
+                  class="range-slider"
+                  min="5000"
+                  max="100000"
+                  step="5000"
+                  value="15000"
+                />
+              </div>
+
+              <!-- Input 2 -->
+              <div class="calc-group">
+                <label for="team-size">
+                  <span>Engineering Team Size:</span>
+                  <span id="team-size-val" class="calc-val">8</span>
+                </label>
+                <input
+                  type="range"
+                  id="team-size"
+                  class="range-slider"
+                  min="2"
+                  max="50"
+                  step="1"
+                  value="8"
+                />
+              </div>
+
+              <!-- Input 3 -->
+              <div class="calc-group">
+                <label for="deploy-freq">Deployment Frequency (Current):</label>
+                <select id="deploy-freq" class="select-input">
+                  <option value="month">
+                    Once a Month (Manual / Scripted)
+                  </option>
+                  <option value="week" selected>
+                    Once a Week (Semi-Automated)
+                  </option>
+                  <option value="day">Daily (Automated CI/CD)</option>
+                  <option value="multiple">
+                    Multiple Times a Day (Full GitOps)
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            <div class="calc-results">
+              <div class="calc-results-title">
+                Estimated Optimization Impact
+              </div>
+
+              <div class="result-row">
+                <span class="result-label">Est. Annual Cloud Savings:</span>
+                <span id="annual-savings" class="result-value">$45,000</span>
+              </div>
+
+              <div class="result-row">
+                <span class="result-label">Engineering Time Reclaimed:</span>
+                <span id="time-saved" class="result-value">1,440 hrs</span>
+              </div>
+
+              <div class="result-row">
+                <span class="result-label">Deployment Speedup:</span>
+                <span id="speedup-factor" class="result-value">12x</span>
+              </div>
+
+              <div class="result-note">
+                Calculations based on average cost-containment audits and
+                pipeline speed improvements achieved across past project
+                deployments.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Work Experience Timeline Section -->
+      <section id="experience">
+        <div class="container">
+          <h2><span class="gradient-text">Professional Timeline</span></h2>
+          <p class="section-subtitle">
+            Click on any role to expand key projects, tasks, and environment
+            details.
+          </p>
+
+          <div class="timeline-container">
+            <div class="timeline-line"></div>
+
+            <!-- Item 1: Metro 2025 -->
+            <div class="timeline-item">
+              <div class="timeline-badge"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">Jun 2025 – Dec 2025</div>
+                <h3>Engineering Consultant</h3>
+                <div class="timeline-company">METRO Digital</div>
+
+                <div class="timeline-details">
+                  <ul>
+                    <li>
+                      Designed GKE migration plans, NoSQL database migrations,
+                      and performance dashboards.
+                    </li>
+                    <li>
+                      Successfully migrated a fleet of nearly 100 microservices
+                      into Google Cloud Platform.
+                    </li>
+                    <li>
+                      Developed custom Terraform modules and Kustomize templates
+                      to automate cluster resources.
+                    </li>
+                    <li>
+                      Optimized GKE auto-scaling parameters to maximize compute
+                      resource utilization and cut cloud spend.
+                    </li>
+                  </ul>
+                  <div class="tag-list">
+                    <span class="tag">GCP</span>
+                    <span class="tag">GKE</span>
+                    <span class="tag">Terraform</span>
+                    <span class="tag">GitLab CI</span>
+                    <span class="tag">Golang</span>
+                  </div>
+                </div>
+                <div class="timeline-toggle-btn">Details</div>
+              </div>
+            </div>
+
+            <!-- Item 2: Voyc AI -->
+            <div class="timeline-item">
+              <div class="timeline-badge"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">May 2025 – Jun 2025</div>
+                <h3>Engineering Consultant</h3>
+                <div class="timeline-company">Voyc AI</div>
+
+                <div class="timeline-details">
+                  <ul>
+                    <li>
+                      Designed AWS Cloud architecture for highly available
+                      AI-powered compliance monitoring.
+                    </li>
+                    <li>
+                      Automated infrastructure provisioning from scratch using
+                      OpenTofu, Terraform, and Terragrunt.
+                    </li>
+                    <li>
+                      Integrated Karpenter on AWS EKS to dynamically scale
+                      GPU/CPU nodes based on queued model inference demand.
+                    </li>
+                  </ul>
+                  <div class="tag-list">
+                    <span class="tag">AWS</span>
+                    <span class="tag">EKS</span>
+                    <span class="tag">Karpenter</span>
+                    <span class="tag">OpenTofu</span>
+                    <span class="tag">Terragrunt</span>
+                  </div>
+                </div>
+                <div class="timeline-toggle-btn">Details</div>
+              </div>
+            </div>
+
+            <!-- Item 3: Metro 2021-2025 -->
+            <div class="timeline-item">
+              <div class="timeline-badge"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">Sep 2021 – Mar 2025</div>
+                <h3>Engineering Consultant</h3>
+                <div class="timeline-company">METRO Digital</div>
+
+                <div class="timeline-details">
+                  <ul>
+                    <li>
+                      Decomposed infrastructure configurations using a 5-layer
+                      Terraform modules structure.
+                    </li>
+                    <li>
+                      Architected GitLab-to-GitHub code migration and
+                      implemented tag-based GitOps deployment pipelines.
+                    </li>
+                    <li>
+                      Automated Secret provision and encryption with GCP Secret
+                      Manager, Jenkins, and SOPS.
+                    </li>
+                    <li>
+                      Migrated all application deployments to ArgoCD
+                      (app-of-apps pattern) for 100+ microservices.
+                    </li>
+                    <li>
+                      Designed web routing replacing HAProxy load balancing with
+                      GCP Load Balancer and GCP Private Service Connect.
+                    </li>
+                  </ul>
+                  <div class="tag-list">
+                    <span class="tag">GCP</span>
+                    <span class="tag">ArgoCD</span>
+                    <span class="tag">GitHub Actions</span>
+                    <span class="tag">SOPS</span>
+                    <span class="tag">Gateway API</span>
+                  </div>
+                </div>
+                <div class="timeline-toggle-btn">Details</div>
+              </div>
+            </div>
+
+            <!-- Item 4: Elsewhen -->
+            <div class="timeline-item">
+              <div class="timeline-badge"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">Jul 2021 – Sep 2021</div>
+                <h3>Engineering Consultant</h3>
+                <div class="timeline-company">Elsewhen Ltd</div>
+
+                <div class="timeline-details">
+                  <ul>
+                    <li>
+                      Redesigned data pipelines and CI/CD code bases using a
+                      5-layer architecture.
+                    </li>
+                    <li>
+                      Developed ETL pipeline code for Apache Airflow running on
+                      GCP Cloud Composer in Python.
+                    </li>
+                    <li>
+                      Migrated internal Cloud Composer instances from Apache
+                      Airflow 1 to Airflow 2.
+                    </li>
+                  </ul>
+                  <div class="tag-list">
+                    <span class="tag">Python</span>
+                    <span class="tag">Airflow</span>
+                    <span class="tag">Cloud Composer</span>
+                    <span class="tag">BigQuery</span>
+                  </div>
+                </div>
+                <div class="timeline-toggle-btn">Details</div>
+              </div>
+            </div>
+
+            <!-- Item 5: GlobalLogic -->
+            <div class="timeline-item">
+              <div class="timeline-badge"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">Jan 2019 – Jul 2021</div>
+                <h3>DevOps Tech Lead & Cloud Architect</h3>
+                <div class="timeline-company">GlobalLogic</div>
+
+                <div class="timeline-details">
+                  <ul>
+                    <li>
+                      Led DevOps transformation for American Robotics Corp,
+                      deploying EKS, Lambda, and ArgoCD.
+                    </li>
+                    <li>
+                      Configured IAM billing, VPC networks, and EKS/GKE
+                      Terraform modules for next-gen TV platform.
+                    </li>
+                    <li>
+                      Designed Kiev's Smart City Platform (Green Wave) deploying
+                      GKE, Cloud Functions, and Cloud Build.
+                    </li>
+                    <li>
+                      Contributed official infrastructure modules to the
+                      google-cloud-platform CFT org.
+                    </li>
+                  </ul>
+                  <div class="tag-list">
+                    <span class="tag">GCP CFT</span>
+                    <span class="tag">EKS</span>
+                    <span class="tag">GKE</span>
+                    <span class="tag">Splunk</span>
+                    <span class="tag">Azure DevOps</span>
+                  </div>
+                </div>
+                <div class="timeline-toggle-btn">Details</div>
+              </div>
+            </div>
+
+            <!-- Item 6: EPAM -->
+            <div class="timeline-item">
+              <div class="timeline-badge"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">Aug 2015 – Dec 2018</div>
+                <h3>Senior DevOps & System Engineer</h3>
+                <div class="timeline-company">EPAM Systems</div>
+
+                <div class="timeline-details">
+                  <ul>
+                    <li>
+                      Drove Kubernetes migration in California, writing custom
+                      Helm charts and Ansible playbooks.
+                    </li>
+                    <li>
+                      Constructed CI/CD workflows for a Connecticut-based
+                      investment management firm.
+                    </li>
+                    <li>
+                      Maintained and scaled multi-node e-commerce Hybris
+                      clusters using Ansible, Python, and Jenkins DSL.
+                    </li>
+                  </ul>
+                  <div class="tag-list">
+                    <span class="tag">Kubernetes</span>
+                    <span class="tag">Helm</span>
+                    <span class="tag">Ansible</span>
+                    <span class="tag">Jenkins DSL</span>
+                  </div>
+                </div>
+                <div class="timeline-toggle-btn">Details</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact">
+        <div class="container contact-grid">
+          <div class="contact-info">
+            <h2><span class="gradient-text">Let's Connect</span></h2>
+            <p>
+              Looking for a reliable contractor to design your cloud
+              architecture, secure your delivery pipelines, optimize kubernetes
+              performance, or establish scalable MLOps? Let's discuss your
+              engineering roadmap.
+            </p>
+
+            <div class="contact-methods">
+              <a href="mailto:ivan.kornienko@gmail.com" class="contact-card">
+                <div class="contact-icon">✉️</div>
+                <div class="contact-text">
+                  <h4>Email</h4>
+                  <p>ivan.kornienko@gmail.com</p>
+                </div>
+              </a>
+
+              <a href="tel:+380954349508" class="contact-card">
+                <div class="contact-icon">📞</div>
+                <div class="contact-text">
+                  <h4>Phone & Messengers</h4>
+                  <p>+380 (95) 434-95-08 (Telegram, WhatsApp, Signal)</p>
+                </div>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/ivankornienko"
+                target="_blank"
+                rel="noopener"
+                class="contact-card"
+              >
+                <div class="contact-icon">🔗</div>
+                <div class="contact-text">
+                  <h4>LinkedIn</h4>
+                  <p>linkedin.com/in/ivankornienko</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="scheduling-panel">
+            <div class="calendar-preview-icon">📅</div>
+            <h3>Book a 30-Min Tech Consultation</h3>
+            <p>
+              Schedule a focused introductory meeting directly via video call to
+              discuss your infrastructure bottlenecks, migrations, or contract
+              requirements.
+            </p>
+            <a href="#booking-modal" class="btn btn-primary open-booking"
+              >Schedule meeting</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-content">
+        <div class="footer-logo">KORN.SYSTEMS</div>
+        <p>
+          &copy; 2026 Ivan Kornienko. All rights reserved. Registered Contractor
+          in Ukraine.
+        </p>
+        <div class="footer-links">
+          <a href="resume.md">Raw Resume (MD)</a>
+          <a href="resume.json">JSON Resume</a>
+          <a href="llms.txt">llms.txt</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Video Call Booking Modal -->
+    <div id="booking-modal" class="modal" aria-hidden="true" role="dialog">
+      <div class="modal-content">
+        <button
+          class="modal-close"
+          id="modal-close"
+          aria-label="Close scheduling modal"
+        >
+          &times;
+        </button>
+        <div class="modal-body" id="booking-iframe-container">
+          <!-- Iframe will be injected dynamically via JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripting -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
