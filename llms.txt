@@ -1,0 +1,14 @@
+# Ivan Kornienko - Cloud Solutions Architect & DevSecOps Consultant
+
+> Senior Cloud Infrastructure Contractor delivering scalable, secure cloud platforms, Kubernetes GitOps, MLOps, and cost optimization.
+
+## Core Capabilities
+- Cloud Architecture (GCP, AWS, Azure)
+- Kubernetes Orchestration & GitOps (ArgoCD)
+- MLOps & AI Reliability
+- Infrastructure as Code (Terraform, OpenTofu)
+
+## Key Pages
+- [Main Site](https://korn.systems/)
+- [Raw Resume](/resume.md)
+- [JSON Resume](/resume.json)
