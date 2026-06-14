@@ -1,0 +1,15 @@
+{
+  "name": "korn.systems",
+  "version": "1.0.0",
+  "description": "Portfolio website for korn.systems",
+  "scripts": {
+    "test": "playwright test",
+    "lint": "eslint .",
+    "format": "prettier --write \"**/*.{html,css,js,md,json}\""
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "eslint": "^8.57.1",
+    "prettier": "^3.8.4"
+  }
+}
