@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Replace this placeholder link with your actual Calendly / Cal.com link
   // e.g. "https://calendly.com/your-username/30min?hide_event_type_details=1&background_color=0f111a&text_color=f8fafc&primary_color=06b6d4"
   const CALENDLY_URL =
-    "https://calendly.com/ivan-kornienko/30min?hide_event_type_details=1&background_color=0f111a&text_color=f8fafc&primary_color=06b6d4";
+    "https://calendly.com/ivan-kornienko/30min?hide_event_type_details=1&primary_color=06b6d4";
 
   function openModal(e) {
     e.preventDefault();
@@ -239,4 +239,31 @@ document.addEventListener("DOMContentLoaded", () => {
       closeModal();
     }
   });
+
+  // --- 5. Mobile Menu Toggle ---
+  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+  const mainNavUl = document.querySelector('nav[aria-label="Main Navigation"] ul');
+  if (mobileMenuToggle && mainNavUl) {
+    mobileMenuToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      mainNavUl.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+      if (mainNavUl.classList.contains('active') && 
+          !mainNavUl.contains(e.target) && 
+          !mobileMenuToggle.contains(e.target)) {
+        mainNavUl.classList.remove('active');
+      }
+    });
+
+    // Close menu when a link is clicked
+    const navLinks = mainNavUl.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mainNavUl.classList.remove('active');
+      });
+    });
+  }
 });

@@ -67,6 +67,26 @@ body {
 }
 
 /* Background Cyber Grid / Ambient Glows */
+.network-flow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  background-image: 
+    linear-gradient(rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: data-flow 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes data-flow {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(50px); }
+}
+
 .ambient-glow-1 {
   position: absolute;
   top: 10%;
@@ -182,10 +202,11 @@ header {
 }
 
 .nav-container {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   height: 4.5rem;
+  gap: 1.5rem;
 }
 
 .logo {
@@ -194,10 +215,17 @@ header {
   font-size: 1.5rem;
   letter-spacing: 0.05em;
   text-decoration: none;
+  grid-column: 1;
 }
 
 .logo .dot {
   color: var(--accent-cyan);
+}
+
+nav {
+  grid-column: 2;
+  display: flex;
+  justify-content: center;
 }
 
 nav ul {
@@ -211,6 +239,7 @@ nav a {
   color: var(--text-secondary);
   font-size: 0.9rem;
   font-weight: 500;
+  white-space: nowrap;
   transition: var(--transition-smooth);
 }
 
@@ -219,12 +248,12 @@ nav a:hover {
 }
 
 .header-cta {
+  grid-column: 3;
   display: flex;
   align-items: center;
   gap: 1.5rem;
 }
 
-/* Availability Badge */
 .availability-badge {
   display: flex;
   align-items: center;
@@ -236,6 +265,7 @@ nav a:hover {
   background: rgba(16, 185, 129, 0.1);
   border: 1px solid rgba(16, 185, 129, 0.2);
   color: var(--accent-emerald);
+  white-space: nowrap;
 }
 
 .availability-badge .pulse-dot {
@@ -268,6 +298,7 @@ nav a:hover {
   font-weight: 600;
   font-size: 0.95rem;
   border-radius: var(--border-radius);
+  white-space: nowrap;
   text-decoration: none;
   cursor: pointer;
   transition: var(--transition-smooth);
@@ -1061,6 +1092,24 @@ footer {
   border: none;
 }
 
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-primary);
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 1200px) {
+  nav ul {
+    gap: 0.75rem;
+  }
+  nav a {
+    font-size: 0.85rem;
+  }
+}
+
 /* Responsive Media Queries */
 @media (max-width: 1024px) {
   html {
@@ -1089,6 +1138,51 @@ footer {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
+
+  /* Header Navigation */
+  .availability-badge .badge-text {
+    display: none;
+  }
+  
+  .availability-badge {
+    padding: 0.35rem 0.5rem; /* just for the pulse dot */
+  }
+
+  .header-cta {
+    gap: 0.5rem;
+    margin-right: 2.5rem;
+  }
+
+  .btn {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.85rem;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    z-index: 100;
+    position: absolute;
+    right: 1rem;
+  }
+
+  nav[aria-label="Main Navigation"] ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 4.5rem;
+    left: 0;
+    right: 0;
+    background: var(--bg-secondary);
+    padding: 1rem;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  nav[aria-label="Main Navigation"] ul.active {
+    display: flex;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1104,8 +1198,8 @@ footer {
     padding: 0 1rem;
   }
 
-  nav {
-    display: none; /* simple burger menu could be implemented, keeping simple for mobile */
+  .availability-badge {
+    display: none;
   }
 
   .hero {
@@ -1129,8 +1223,9 @@ footer {
     left: 20px;
   }
 
-  .timeline-item {
+  .timeline-item, .timeline-item:nth-child(even), .timeline-item:nth-child(odd) {
     width: 100%;
+    left: 0;
     padding-left: 3rem !important;
     padding-right: 0 !important;
     text-align: left !important;

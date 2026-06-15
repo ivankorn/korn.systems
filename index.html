@@ -72,7 +72,7 @@
     />
 
     <!-- Styling -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
 
     <!-- Schema.org Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -127,7 +127,8 @@
     </script>
   </head>
   <body>
-    <!-- Background Lights -->
+    <!-- Background Lights & Network Flow -->
+    <div class="network-flow"></div>
     <div class="ambient-glow-1"></div>
     <div class="ambient-glow-2"></div>
 
@@ -142,20 +143,17 @@
             <li><a href="#case-studies">Case Studies</a></li>
             <li><a href="#roi-calc">DevOps ROI</a></li>
             <li><a href="#experience">Experience</a></li>
+            <li><a href="/ai/">AI Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
         <div class="header-cta">
-          <div
-            class="availability-badge"
-            aria-label="Status: Available for contracts"
-          >
+          <div class="availability-badge" aria-label="Status: Available for contracts">
             <span class="pulse-dot"></span>
-            Available for Contracts
+            <span class="badge-text">Available for Contracts</span>
           </div>
-          <a href="#booking-modal" class="btn btn-primary open-booking"
-            >Book a Call</a
-          >
+          <a href="#booking-modal" class="btn btn-primary open-booking">Book Call</a>
+          <div class="mobile-menu-toggle" aria-label="Menu">&#9776;</div>
         </div>
       </div>
     </header>
@@ -818,6 +816,6 @@
     </div>
 
     <!-- Scripting -->
-    <script src="js/main.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>
