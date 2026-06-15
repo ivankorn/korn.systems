@@ -241,28 +241,32 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // --- 5. Mobile Menu Toggle ---
-  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-  const mainNavUl = document.querySelector('nav[aria-label="Main Navigation"] ul');
+  const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+  const mainNavUl = document.querySelector(
+    'nav[aria-label="Main Navigation"] ul',
+  );
   if (mobileMenuToggle && mainNavUl) {
-    mobileMenuToggle.addEventListener('click', function(e) {
+    mobileMenuToggle.addEventListener("click", function (e) {
       e.stopPropagation();
-      mainNavUl.classList.toggle('active');
+      mainNavUl.classList.toggle("active");
     });
 
     // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-      if (mainNavUl.classList.contains('active') && 
-          !mainNavUl.contains(e.target) && 
-          !mobileMenuToggle.contains(e.target)) {
-        mainNavUl.classList.remove('active');
+    document.addEventListener("click", function (e) {
+      if (
+        mainNavUl.classList.contains("active") &&
+        !mainNavUl.contains(e.target) &&
+        !mobileMenuToggle.contains(e.target)
+      ) {
+        mainNavUl.classList.remove("active");
       }
     });
 
     // Close menu when a link is clicked
-    const navLinks = mainNavUl.querySelectorAll('a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mainNavUl.classList.remove('active');
+    const navLinks = mainNavUl.querySelectorAll("a");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mainNavUl.classList.remove("active");
       });
     });
   }

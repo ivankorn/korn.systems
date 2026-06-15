@@ -3,7 +3,7 @@
 **Senior DevOps, DevSecOps, SRE, Cloud Architect, MLOps & AI Reliability Contractor**
 
 - **Location**: Remote from Ukraine (GMT+2/GMT+3)
-- **Email**: [ivan.kornienko@gmail.com](mailto:ivan.kornienko@gmail.com)
+- **Email**: [ivan@korn.systems](mailto:ivan@korn.systems)
 - **Phone / Messengers**: +380(95)434-95-08 (Viber, Telegram, WhatsApp, Signal)
 - **LinkedIn**: [linkedin.com/in/ivankornienko](https://www.linkedin.com/in/ivankornienko)
 - **GitHub**: [github.com/ivankorn](https://github.com/ivankorn)
