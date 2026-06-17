@@ -16,4 +16,7 @@
 ## Open Source / Portfolio
 - [korn.systems Website Code](https://github.com/ivankorn/korn.systems): Development, automation, and open-sourcing of this personal portfolio and AI assistant integration.
 - [terraform-spaceship-github-pages](https://registry.terraform.io/modules/ivankorn/github-pages/spaceship/latest): Authored and published Terraform module for automated GitHub Pages and Spaceship DNS configuration.
-- [AI Agent Skills](https://github.com/antonbabenko): Contributed to Anton Babenko's `terraform-skill` and `code-intelligence` skills.
+- [terraform-skill](https://github.com/antonbabenko/terraform-skill): Contributed to the open-source `terraform-skill` for AI coding agents.
+- [agent-plugins](https://github.com/antonbabenko/agent-plugins/tree/master): Contributed to the open-source `agent-plugins` repository (specifically the `code-intelligence` skill) for AI coding agents.
+- [Cloud Foundation Toolkit](https://github.com/GoogleCloudPlatform/cloud-foundation-toolkit): Contributed official Deployment Manager templates, tools, and automation scripts for Google Cloud.
+- [Terraform Google Modules](https://github.com/terraform-google-modules): Contributed official Terraform modules, tests, and automation builds for Google Cloud.

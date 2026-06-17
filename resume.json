@@ -6,7 +6,7 @@
     "email": "ivan@korn.systems",
     "phone": "+380(95)434-95-08",
     "url": "https://korn.systems",
-    "summary": "Senior Cloud Infrastructure Consultant with 19 years in IT, including 14 years contracting for top US/EU companies. Expert in Cloud Solutions Architecture (GCP, AWS), automated CI/CD/Sec pipelines, high-scale Kubernetes management, GitOps, MLOps, and AI Reliability (scaling LLM workloads, Karpenter, cost optimization). Contributor to Google Cloud Foundation Toolkit.",
+    "summary": "Senior Cloud Infrastructure Consultant with 20+ years in IT, including 14 years contracting for top US/EU companies. Expert in Cloud Solutions Architecture (GCP, AWS), automated CI/CD/Sec pipelines, high-scale Kubernetes management, GitOps, MLOps, and AI Reliability (scaling LLM workloads, Karpenter, cost optimization). Contributor to Google Cloud Foundation Toolkit.",
     "location": {
       "city": "Obukhiv",
       "region": "Kyiv Region",
@@ -42,22 +42,23 @@
     },
     {
       "name": "METRO Digital",
-      "position": "Engineering Consultant (Contractor)",
+      "position": "Site Reliability Engineer / Cloud Consultant",
       "url": "https://metro.digital",
-      "startDate": "2025-06",
+      "startDate": "2021-09",
       "endDate": "2025-12",
-      "summary": "Kubernetes migration into GCP, NoSQL database migration, GKE optimization.",
+      "summary": "Comprehensive cloud transformation, multi-cluster GCP migrations, and GitOps implementations across 500+ microservices.",
       "highlights": [
-        "Designed detailed GCP migration and NoSQL database migration plans.",
-        "Successfully migrated a fleet of nearly 100 microservices into GCP.",
-        "Developed custom Terraform modules and Kustomize templates.",
-        "Optimized GKE clusters for performance and cloud costs.",
-        "Mentored full-time engineers in modern DevOps practices."
+        "Designed and executed the complete GCP migration path for hundreds of microservices, including a critical NoSQL database SaaS migration.",
+        "Replaced internal CD tools with ArgoCD using the app-of-apps pattern for highly scalable deployments.",
+        "Implemented secure Gateway API and GCP Private Service Connect (PSC), successfully replacing legacy HAProxy load balancers.",
+        "Migrated secrets to GCP Secret Manager, fully automated using Jenkins, Terraform, and SOPS.",
+        "Configured dynamic Jenkins pipelines with automatic repository discovery and dynamic configuration.",
+        "Developed reusable Terraform modules, structured Helm charts, and Kustomize templates for optimal Kubernetes multi-cluster management."
       ]
     },
     {
       "name": "Voyc AI",
-      "position": "Engineering Consultant (Contractor)",
+      "position": "Cloud Engineer (Contractor)",
       "url": "https://voyc.ai",
       "startDate": "2025-05",
       "endDate": "2025-06",
@@ -69,63 +70,102 @@
       ]
     },
     {
-      "name": "METRO Digital",
-      "position": "Engineering Consultant (Contractor)",
-      "url": "https://metro.digital",
-      "startDate": "2021-09",
-      "endDate": "2025-03",
-      "summary": "GitLab to GitHub migration, internal CD to ArgoCD migration, GCP migration, and Gateway API implementation.",
-      "highlights": [
-        "Implemented system decomposition using a structured 5-layer infrastructure pattern in Terraform.",
-        "Implemented GitOps (tag-based deployment, PR builds, merge builds) with GCP Cloud Build.",
-        "Developed reusable Terraform modules and Helm charts with fully automated CI/CD checks.",
-        "Migrated secrets to GCP Secret Manager, automated using Jenkins, Terraform, and SOPS.",
-        "Migrated microservice deployments to ArgoCD with an app-of-apps pattern for about 100 microservices.",
-        "Replaced HAProxy load balancers with GCP Load Balancers and GCP Private Service Connect (PSC)."
-      ]
-    },
-    {
       "name": "Elsewhen Ltd",
-      "position": "Engineering Consultant (Contractor)",
+      "position": "Engineering Consultant",
       "url": "https://elsewhen.com",
       "startDate": "2021-07",
       "endDate": "2021-09",
       "summary": "ETL pipeline implementation and IaC design for an advertisement firm.",
       "highlights": [
-        "Redesigned Cloud Architecture, Continuous Integration, and IaC pipelines.",
-        "Implemented System Decomposition with a 5-layer infrastructure in Terraform.",
-        "Developed ETL pipelines in Python for Google Cloud Composer (Apache Airflow).",
-        "Migrated Cloud Composer from Apache Airflow 1 to Airflow 2."
+        "Redesigned Cloud Architecture with a 5-layer system decomposition using Terraform.",
+        "Developed Python ETL pipelines for Google Cloud Composer (Apache Airflow), migrating from Airflow 1 to Airflow 2.",
+        "Provisioned Dataflow, DataCatalog, BigQuery, and Cloud Functions for the data stack."
       ]
     },
     {
-      "name": "GlobalLogic",
-      "position": "DevOps Tech Lead / Cloud Architect",
-      "url": "https://globallogic.com",
-      "startDate": "2019-01",
-      "endDate": "2021-07",
-      "summary": "Led DevOps transformation programs, cloud architecture setups, training courses, and Google CFT development.",
+      "name": "American Robotics Corp",
+      "position": "DevOps Consultant",
+      "startDate": "2021-02",
+      "endDate": "2021-08",
+      "summary": "Planned and drove comprehensive DevOps transformation.",
       "highlights": [
-        "Planned and driven DevOps transformation for American Robotics Corp using AWS (EKS, Lambda, S3, Terragrunt, ArgoCD).",
-        "Managed DevOps scope and IAM organization for a next-gen TV platform in GCP, deploying GKE, EKS, and Azure DevOps CI/CD pipelines.",
-        "Built a Bare-Metal/Public Cloud Hybrid SDLC accelerator with Kubernetes and ArgoCD.",
-        "Designed Kiev's Smart City Platform (Green Wave) deploying GKE, Cloud Functions, and Cloud Build.",
-        "Contributed official modules to the Google Cloud Foundation Toolkit and HashiCorp organizations.",
-        "DevOps Training Lead: Wrote syllabus and coached trainee systems engineers in Linux, networking, python, and cloud."
+        "Provisioned AWS infrastructure using Terraform and Terragrunt (EKS, Elastic Beanstalk, Lambda).",
+        "Implemented Jenkins and GitLab CI pipelines alongside ArgoCD for Kubernetes deployments."
       ]
     },
     {
-      "name": "EPAM Systems",
-      "position": "Senior DevOps & System Engineer",
-      "url": "https://epam.com",
-      "startDate": "2015-08",
+      "name": "American Broadcaster / Media Company",
+      "position": "DevOps Technical Lead",
+      "startDate": "2020-02",
+      "endDate": "2021-02",
+      "summary": "Managed DevOps scope and IAM organization for a Next Gen TV Platform.",
+      "highlights": [
+        "Designed a hybrid cloud architecture deploying GCP GKE and AWS EKS.",
+        "Configured Confluent Kafka Connections through VPC peering, Redis, and Apigee API Gateway.",
+        "Implemented Azure DevOps CI/CD pipelines and Splunk Dashboards with Alerts."
+      ]
+    },
+    {
+      "name": "SDLC Accelerator & Smart City Platform",
+      "position": "Lead Infrastructure Engineer",
+      "startDate": "2019-08",
+      "endDate": "2020-01",
+      "summary": "Bare-Metal SDLC and Kyiv Smart City infrastructure setup.",
+      "highlights": [
+        "Built a Bare-Metal/Public Cloud Hybrid SDLC accelerator platform with Kubernetes/K3S and ArgoCD.",
+        "Designed and implemented the cloud infrastructure for Kyiv's Intelligent Traffic Management System (Green Wave) using GKE and Cloud Functions."
+      ]
+    },
+    {
+      "name": "DevOps Training Lead & Mentor",
+      "position": "Lector / Training Lead",
+      "startDate": "2017-09",
+      "endDate": "2019-05",
+      "summary": "Directed Resource Development Centers in Poland and Ukraine.",
+      "highlights": [
+        "Wrote syllabus and coached trainee systems engineers in Linux, networking, python, and cloud architecture.",
+        "Mentored trainee engineers, achieving a 5/5 score for lectures on DevOps and IaC."
+      ]
+    },
+    {
+      "name": "US On-Site Cloud Consulting",
+      "position": "Senior DevOps / Systems Engineer",
+      "startDate": "2018-04",
       "endDate": "2018-12",
-      "summary": "Kubernetes migrations, CI/CD consulting, mentoring, and environment configuration for major US clients.",
+      "summary": "Delivered on-site CI/CD solutions in California and Connecticut.",
       "highlights": [
-        "Drove migration to Kubernetes in California for an American MLM client, writing Helm charts and Ansible roles.",
-        "Developed CI/CD solutions in Connecticut for a major American Investment Management firm.",
-        "Mentored trainee engineers, achieving a 5/5 score for lectures on DevOps, Linux, and IaC.",
-        "Maintained and optimized multi-node Hybris and Apache e-commerce clusters using Ansible, Python, and Jenkins DSL."
+        "Developed advanced CI/CD solutions in Connecticut for a major American Investment Management firm.",
+        "Maintained multi-node Hybris and Apache e-commerce clusters in California."
+      ]
+    },
+    {
+      "name": "American Multi-Level Marketing Company",
+      "position": "Lead Infrastructure Engineer",
+      "startDate": "2017-02",
+      "endDate": "2017-09",
+      "summary": "E-commerce platform and sub-services development.",
+      "highlights": [
+        "Drove migration to Kubernetes, architecting Helm charts and Ansible roles for a massive e-commerce deployment."
+      ]
+    },
+    {
+      "name": "Worldwide Express Logistic Company",
+      "position": "Senior DevOps Engineer",
+      "startDate": "2016-11",
+      "endDate": "2017-02",
+      "summary": "Developing front-end solution to replace about 13 legacy systems.",
+      "highlights": [
+        "Engineered continuous delivery pipelines and optimized infrastructure for the new unified front-end solution."
+      ]
+    },
+    {
+      "name": "Major Retail Brand",
+      "position": "Senior DevOps Engineer",
+      "startDate": "2015-09",
+      "endDate": "2016-04",
+      "summary": "Rolling out an E-commerce platform.",
+      "highlights": [
+        "Responsible for architecture design, developing, testing, and full system engineering efforts for the global rollout."
       ]
     }
   ],
@@ -263,13 +303,24 @@
       "url": "https://registry.terraform.io/modules/ivankorn/github-pages/spaceship/latest"
     },
     {
-      "name": "Anton Babenko's terraform-skill and code-intelegence skills",
-      "description": "Contributed to open source AI agent skills for Terraform and Code Intelligence.",
-      "url": "https://github.com/antonbabenko"
+      "name": "terraform-skill",
+      "description": "Contributed to the open-source terraform-skill plugin for AI coding agents.",
+      "url": "https://github.com/antonbabenko/terraform-skill"
     },
     {
-      "name": "Google Cloud Foundation Toolkit (CFT)",
-      "description": "Contributed official Terraform modules, Deployment Manager templates, tests, and automation scripts for Google Cloud."
+      "name": "agent-plugins",
+      "description": "Contributed to the open-source agent-plugins repository (specifically the code-intelligence skill) for AI coding agents.",
+      "url": "https://github.com/antonbabenko/agent-plugins/tree/master"
+    },
+    {
+      "name": "Cloud Foundation Toolkit",
+      "description": "Contributed official Deployment Manager templates, tools, and automation scripts for Google Cloud.",
+      "url": "https://github.com/GoogleCloudPlatform/cloud-foundation-toolkit"
+    },
+    {
+      "name": "Terraform Google Modules",
+      "description": "Contributed official Terraform modules, tests, and automation builds for Google Cloud.",
+      "url": "https://github.com/terraform-google-modules"
     },
     {
       "name": "GL Smart City Platform (Green Wave)",

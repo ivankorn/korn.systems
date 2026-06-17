@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (terminalBody) {
     let lineIndex = 0;
 
-    function typeLine() {
+    const typeLine = () => {
       if (lineIndex >= terminalLines.length) return;
 
       const lineData = terminalLines[lineIndex];
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let charIndex = 0;
         const text = lineData.text;
 
-        function typeChar() {
+        const typeChar = () => {
           if (charIndex < text.length) {
             textSpan.textContent += text.charAt(charIndex);
             charIndex++;
@@ -72,11 +72,11 @@ document.addEventListener("DOMContentLoaded", () => {
             lineIndex++;
             setTimeout(typeLine, lineData.delay);
           }
-        }
+        };
 
         typeChar();
       }
-    }
+    };
 
     // Start terminal typing simulation
     setTimeout(typeLine, 800);
@@ -268,6 +268,38 @@ document.addEventListener("DOMContentLoaded", () => {
       link.addEventListener("click", () => {
         mainNavUl.classList.remove("active");
       });
+    });
+  }
+});
+
+// --- 6. Carousel Logic ---
+const carousels = document.querySelectorAll(".carousel-container");
+
+carousels.forEach((container) => {
+  const track = container.querySelector(".carousel-track");
+  const prevBtn = container.querySelector(".carousel-btn.prev");
+  const nextBtn = container.querySelector(".carousel-btn.next");
+
+  if (!track) return;
+
+  const scrollAmount = () => {
+    // scroll by the width of one card plus gap
+    const card = track.querySelector(".case-card");
+    if (card) {
+      return card.offsetWidth + 32; // 32px is roughly 2rem gap
+    }
+    return 300;
+  };
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      track.scrollBy({ left: scrollAmount(), behavior: "smooth" });
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      track.scrollBy({ left: -scrollAmount(), behavior: "smooth" });
     });
   }
 });

@@ -14,7 +14,7 @@
 
 ## Executive Summary
 
-Highly creative, smart, and experienced Cloud Infrastructure Engineer with **19 years in IT** (14 years on contract for top US/European corporations, FAANG, retail, and media).
+Highly creative, smart, and experienced Cloud Infrastructure Engineer with **20+ years in IT** (14 years on contract for top US/European corporations, FAANG, retail, and media).
 
 Specializes in architecting scalable cloud platforms, automating complete SDLC pipelines (CI/CD/Sec/Test/Deploy), managing large-scale migrations to microservices, and implementing GitOps. Actively working in the MLOps and AI Reliability domains, configuring autoscaled GPU/CPU clusters (via AWS Karpenter and GKE), cost optimizations, and secure cloud environments for LLM application deployments.
 
@@ -45,126 +45,111 @@ Specializes in architecting scalable cloud platforms, automating complete SDLC p
   - Developed, automated deployment, and open-sourced the korn.systems portfolio website.
 - **Tech Stack**: Terraform/HCL2, AI Integrations, Cloud Infrastructure.
 
-### Engineering Consultant (Contractor)
+### Site Reliability Engineer / Cloud Consultant
 
-**METRO Digital** | _June 2025 – December 2025 (6 mos)_ | Remote
+**METRO Digital** | _September 2021 – December 2025 (4 yrs 4 mos)_ | Remote
 
-- **Projects**: Kubernetes Migration (into GCP), NoSQL Database Migration, Kubernetes optimization.
+- **Projects**: Comprehensive cloud transformation, multi-cluster GCP migrations, and GitOps implementations across 500+ microservices.
 - **Achievements**:
-  - Designed detailed GCP migration and Database migration plans with clear timelines and dashboards.
-  - Successfully migrated a fleet of nearly 100 microservices into GCP.
-  - Developed custom Terraform modules and Kustomize templates to facilitate smooth changes.
-  - Optimized GKE clusters for performance and cloud spend reduction.
-  - Coached full-time engineers in modern DevOps practices.
-- **Tech Stack**: Groovy, Terraform/HCL2, Bash, Python, Golang, Google Cloud Platform (GKE, GCS, IAM, Google Secret Manager), GitHub Actions, GitLab CI/CD.
+  - Designed and executed the complete GCP migration path for hundreds of microservices, including a critical NoSQL database SaaS migration.
+  - Replaced internal CD tools with ArgoCD using the app-of-apps pattern for highly scalable deployments.
+  - Implemented secure Gateway API and GCP Private Service Connect (PSC), successfully replacing legacy HAProxy load balancers.
+  - Migrated secrets to GCP Secret Manager, fully automated using Jenkins, Terraform, and SOPS.
+  - Configured dynamic Jenkins pipelines with automatic repository discovery and dynamic configuration.
+  - Developed reusable Terraform modules, structured Helm charts, and Kustomize templates for optimal Kubernetes multi-cluster management.
+- **Tech Stack**: Groovy, Terraform/HCL2, Bash, Python, Golang, GCP (GKE, GCS, Cloud Build, IAM, Secret Manager), ArgoCD, GitHub Actions, GitLab CI/CD, SOPS, Gateway API.
 
-### Engineering Consultant (Contractor)
+### Cloud Engineer (Contractor)
 
 **Voyc AI** | _May 2025 – June 2025 (2 mos)_ | Remote
 
-- **Project**: AI-powered compliance monitoring.
+- **Project**: AI-powered compliance monitoring AWS cloud design and automation.
 - **Achievements**:
   - Designed highly available and cost-efficient AWS Cloud Architecture.
   - Automated infrastructure provisioning from scratch using OpenTofu, Terraform, and Terragrunt.
   - Implemented Karpenter for AWS EKS to achieve dynamic, cost-optimized scaling of Kubernetes nodes.
 - **Tech Stack**: Terraform/HCL2, Bash, Python, Golang, AWS, ECS, EKS (with Karpenter), VPC, KMS, EFS, ALB, API Gateway, IAM, S3, Secret Manager, Redis, RabbitMQ, PostgreSQL, OIDC, GitHub Actions.
 
-### Engineering Consultant (Contractor)
-
-**METRO Digital** | _September 2021 – March 2025 (3 yrs, 7 mos)_ | Remote
-
-- **Projects**: Large-scale migration from GitLab to GitHub, internal CD migration to ArgoCD, GCP Migration, Gateway API integration.
-- **Achievements**:
-  - Designed and executed cloud architecture for GCP migration and Git hosting migration.
-  - Implemented system decomposition using a structured 5-layer infrastructure pattern (Terraform/HCL2).
-  - Developed custom GitOps flows (tag-based deployment, PR builds, merge builds) using GCP Cloud Build and Terraform.
-  - Created reusable Terraform modules and Helm charts with fully automated CI/CD checks.
-  - Migrated secrets to GCP Secret Manager, automating encryption and delivery using Jenkins, Terraform, and SOPS.
-  - Automated deployment configurations as code for Jenkins, ArgoCD, and External Secrets.
-  - Improved CI/CD pipelines and successfully migrated approximately 100 microservices.
-  - Designed and implemented web routing replacements (HAProxy to GCP Load Balancer and GCP PSC).
-- **Tech Stack**: Groovy, Terraform/HCL2, Bash, Python, Golang, GCP (GKE, GCS, Cloud Build, IAM, Secret Manager), ArgoCD, GitHub Actions, GitLab CI/CD, SOPS, Gateway API.
-
-### Engineering Consultant (Contractor)
+### Engineering Consultant
 
 **Elsewhen Ltd** | _July 2021 – September 2021 (3 mos)_ | Remote
 
-- **Project**: ETL pipeline implementation for an advertisement firm.
+- **Project**: ETL pipeline implementation and IaC design for an advertisement firm.
 - **Achievements**:
-  - Redesigned cloud architecture, CI, and IaC pipelines.
-  - Implemented system decomposition with a 5-layer infrastructure in Terraform/HCL2.
-  - Developed custom ETL pipelines in Python for Google Cloud Composer.
-  - Led the migration of Google Cloud Composer from Apache Airflow 1 to Airflow 2.
+  - Redesigned cloud architecture, CI, and IaC pipelines with a 5-layer system decomposition using Terraform.
+  - Developed custom Python ETL pipelines for Google Cloud Composer (Apache Airflow), migrating from Airflow 1 to Airflow 2.
+  - Provisioned Dataflow, DataCatalog, BigQuery, and Cloud Functions for the data stack.
 - **Tech Stack**: Python, Terraform/HCL2, Bash, GCP (Cloud Composer, Dataflow, DataCatalog, BigQuery, Cloud Functions, Cloud Storage, Cloud Build, IAM).
 
-### DevOps Tech Lead & Cloud Architect
+### DevOps Consultant
 
-**GlobalLogic** | _January 2019 – July 2021 (2 yrs 7 mos)_ | Kyiv, Ukraine (Remote/On-site)
+**American Robotics Corp** | _February 2021 – August 2021 (7 mos)_ | Remote
 
-- **DevOps Tech Lead / Cloud Architect (Feb 2021 – Jul 2021)**:
-  - Planned and executed DevOps transformation for an American Robotics Corp.
-  - Technologies: Terraform, Terragrunt, AWS (EKS, Elastic Beanstalk, Lambda, S3, CloudWatch), Jenkins, GitLab CI, Helm 3, ArgoCD, Kubernetes.
-- **DevOps Technical Lead (Feb 2020 – Feb 2021)**:
-  - Developed a next-gen TV platform for a major US Broadcaster/Media company.
-  - Provisioned IAM Roles, billing, and organizational folder structure for a multi-tenant GCP organization.
-  - Configured GCP VPC networks, firewalls, and provisioned GKE/EKS clusters using custom Terraform modules.
-  - Managed CI/CD pipelines in Azure DevOps and configured Splunk monitoring dashboards and alerts.
-- **Lead DevOps Engineer (Nov 2019 – Jan 2020)**:
-  - Worked on the GlobalLogic SDLC Accelerator Platform featuring K8s/K3s, API Gateway, Service Mesh, and billing.
-  - Built Terraform modules for GKE, setup ArgoCD, and developed parent Helm charts.
-- **Lead DevOps Engineer (Aug 2019 – Oct 2019)**:
-  - Developed Kiev's Intelligent Traffic Management System (GL Smart City Platform: Green Wave).
-  - Managed DevOps scope and provisioned GKE, Cloud Functions, Cloud Build, and Cloud Filestore.
-- **Senior DevOps Engineer for Google CFT Project (May 2019 – Oct 2019)**:
-  - Contributor to the Google Cloud Foundation Toolkit.
-  - Developed official Terraform modules, Deployment Manager templates, tests, and automation scripts for Google Cloud.
-- **DevOps Training Lead (Jan 2019 – May 2019)**:
-  - Designed the program, wrote materials, and taught Trainee Systems Engineers (Linux, Networking, CI/CD, IaC, Python, AWS, GCP, Jenkins).
+- **Project**: Comprehensive DevOps transformation.
+- **Achievements**:
+  - Provisioned AWS infrastructure using Terraform and Terragrunt (EKS, Elastic Beanstalk, Lambda).
+  - Implemented Jenkins and GitLab CI pipelines alongside ArgoCD for Kubernetes deployments.
 
-### Chief Technology Officer, Co-Owner
+### DevOps Technical Lead
 
-**IAM.FLOWERS** | _March 2021 – Present_ | Kyiv, Ukraine
+**American Broadcaster / Media Company** | _February 2020 – February 2021 (1 yr 1 mo)_ | Remote
 
-- Managed technological stack, website infrastructure, deployment, and digital channels.
+- **Project**: Next Gen TV Platform architecture and IAM organization.
+- **Achievements**:
+  - Designed a hybrid cloud architecture deploying GCP GKE and AWS EKS.
+  - Configured Confluent Kafka Connections through VPC peering, Redis, and Apigee API Gateway.
+  - Implemented Azure DevOps CI/CD pipelines and Splunk Dashboards with Alerts.
 
-### EPAM Systems
+### Lead Infrastructure Engineer
 
-**Senior DevOps & System Engineer Roles** | _August 2015 – December 2018 (3 yrs 5 mos)_ | USA / Ukraine
+**SDLC Accelerator & Smart City Platform** | _August 2019 – January 2020 (6 mos)_ | Remote
 
-- **Senior DevOps Engineer (California, USA - Jul 2018 – Dec 2018)**:
-  - Drove Kubernetes migration for an American multi-level marketing company. Wrote custom Helm charts, Ansible roles, and Python scripts.
-- **Senior Systems Engineer (Connecticut, USA - Apr 2018 – Jun 2018)**:
-  - Developed CI/CD pipelines for an American Investment Management firm.
-- **Trainer & Mentor (Kyiv, Ukraine - Sep 2017 – Apr 2018)**:
-  - Instructed trainees at EPAM Training Center in Linux, Python, virtualization, and configuration management.
-- **Lead Infrastructure Engineer (Kyiv, Ukraine - Feb 2017 – Sep 2017)**:
-  - Led DevOps and configuration management for an American e-commerce client.
-- **Senior DevOps Engineer (Kyiv, Ukraine - Sep 2015 – Feb 2017)**:
-  - Worked on continuous integration, build flows (Jenkins DSL), and Ansible automation for multi-node Hybris/Apache clusters.
+- **Project**: Bare-Metal SDLC and Kyiv Smart City infrastructure setup.
+- **Achievements**:
+  - Built a Bare-Metal/Public Cloud Hybrid SDLC accelerator platform with Kubernetes/K3S and ArgoCD.
+  - Designed and implemented the cloud infrastructure for Kyiv's Intelligent Traffic Management System (Green Wave) using GKE and Cloud Functions.
 
----
+### Lector / Training Lead
 
-## Open Source Contributions & Projects
+**DevOps Training Lead & Mentor** | _September 2017 – May 2019 (1 yr 9 mos)_ | Poland / Ukraine
 
-- **[korn.systems Portfolio](https://github.com/ivankorn/korn.systems)**: Development, automated deployment, and open-sourcing of the personal portfolio website and AI assistant platform.
-- **[terraform-spaceship-github-pages](https://registry.terraform.io/modules/ivankorn/github-pages/spaceship/latest)**: Owned and authored Terraform module for automated GitHub Pages and Spaceship DNS configuration.
-- **AI Agent Skills**: Contributed to Anton Babenko's `terraform-skill` and `code-intelegence` skills for AI coding agents.
-- **Google Cloud Foundation Toolkit (CFT)**: Contributed official Terraform modules, Deployment Manager templates, tests, and automation scripts for Google Cloud.
-- **GL Smart City Platform (Green Wave)**: Designed Kiev's Intelligent Traffic Management System deploying GKE, Cloud Functions, and Cloud Build.
+- **Project**: Directed Resource Development Centers in Poland and Ukraine.
+- **Achievements**:
+  - Wrote syllabus and coached trainee systems engineers in Linux, networking, python, and cloud architecture.
+  - Mentored trainee engineers, achieving a 5/5 score for lectures on DevOps and IaC.
 
----
+### Senior DevOps / Systems Engineer
 
-## Older Experience (Summary)
+**US On-Site Cloud Consulting** | _April 2018 – December 2018 (9 mos)_ | California / Connecticut, USA
 
-- **Launch and Release Manager** | _Playtech_ (2014 – 2015)
-- **Senior Systems Engineer** | _GlobalLogic_ (2011 – 2014)
-- **Unix Systems Engineer** | _ViaCube_ (2010 – 2011)
-- **Lead Systems Engineer** | _Pillar, JSC_ (2008 – 2010)
-- **Systems Administrator** | _Metasoft, Ltd._ (2008)
-- **Senior Systems Administrator** | _Hormonal Preparation Chemist's_ (2006 – 2007)
-- **Systems Administrator** | _X-tend_ (2006)
+- **Project**: Delivered on-site CI/CD solutions for massive enterprise clients.
+- **Achievements**:
+  - Developed advanced CI/CD solutions in Connecticut for a major American Investment Management firm.
+  - Maintained multi-node Hybris and Apache e-commerce clusters in California.
 
----
+### Lead Infrastructure Engineer
+
+**American Multi-Level Marketing Company** | _February 2017 – September 2017 (8 mos)_ | Ukraine
+
+- **Project**: E-commerce platform and sub-services development.
+- **Achievements**:
+  - Drove migration to Kubernetes, architecting Helm charts and Ansible roles for a massive e-commerce deployment.
+
+### Senior DevOps Engineer
+
+**Worldwide Express Logistic Company** | _November 2016 – February 2017 (4 mos)_ | Ukraine
+
+- **Project**: Developing front-end solution to replace about 13 legacy systems.
+- **Achievements**:
+  - Engineered continuous delivery pipelines and optimized infrastructure for the new unified front-end solution.
+
+### Senior DevOps Engineer
+
+**Major Retail Brand** | _September 2015 – April 2016 (8 mos)_ | Ukraine
+
+- **Project**: Rolling out an E-commerce platform.
+- **Achievements**:
+  - Responsible for architecture design, developing, testing, and full system engineering efforts for the global rollout.
 
 ## Education
 

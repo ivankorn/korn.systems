@@ -172,7 +172,7 @@ p {
   color: var(--text-muted);
   font-size: 1.1rem;
   margin-top: -0.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -187,7 +187,7 @@ p {
 }
 
 section {
-  padding: 6rem 0;
+  padding: 4rem 0;
   position: relative;
 }
 
@@ -1247,5 +1247,112 @@ footer {
     flex-direction: column;
     gap: 1.5rem;
     text-align: center;
+  }
+}
+
+/* --- Carousel Styles --- */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 1rem;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.carousel-track {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.carousel-track .case-card {
+  min-width: 350px;
+  max-width: 400px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+@media (max-width: 768px) {
+  .carousel-track .case-card {
+    min-width: 280px;
+    max-width: 300px;
+  }
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
+}
+
+.carousel-btn.prev {
+  left: 0;
+}
+
+.carousel-btn.next {
+  right: 0;
+}
+
+@media (max-width: 1024px) {
+  .carousel-container {
+    padding: 0 40px;
+  }
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+    background: rgba(26, 29, 36, 0.9);
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    padding: 0 24px;
+  }
+  .carousel-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+    background: rgba(26, 29, 36, 0.85);
+  }
+  .carousel-btn.prev {
+    left: 2px;
+  }
+  .carousel-btn.next {
+    right: 2px;
   }
 }

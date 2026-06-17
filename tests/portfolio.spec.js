@@ -1,5 +1,4 @@
 const { test, expect } = require("@playwright/test");
-const path = require("path");
 
 test.describe("korn.systems tests", () => {
   test("has correct title", async ({ page }) => {
