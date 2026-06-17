@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ "master", "main" ]
 
+permissions:
+  contents: read
+
 jobs:
   lint-and-security:
     runs-on: ubuntu-latest
@@ -17,18 +20,14 @@ jobs:
           node-version: '20'
       - name: Install Dependencies
         run: npm ci || npm install
-      - name: Prettier Format Check
+
+      - name: Install Tools
         run: |
-          npx prettier --check "**/*.{html,css,js,md,json}" || echo "Prettier found issues. Run locally: npm run format"
-      - name: Run ESLint
-        run: npx eslint . || echo "ESLint found issues."
-      - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@master
-        with:
-          scan-type: 'fs'
-          ignore-unfixed: true
-          format: 'table'
-          severity: 'CRITICAL,HIGH'
+          curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sudo sh -s -- -b /usr/local/bin
+          pipx install checkov
+      - name: Run Pre-commit
+        run: pipx run pre-commit run --all-files
+
 
   browser-tests:
     runs-on: ubuntu-latest
@@ -51,34 +50,3 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
-
-
-  # TODO: enable terraform apply or move to another repo
-  # terraform-apply:
-  #   runs-on: ubuntu-latest
-  #   needs: [lint-and-security]
-  #   defaults:
-  #     run:
-  #       working-directory: ./terraform
-  #   env:
-  #     GITHUB_TOKEN: ${{ secrets.GH_PAT }}
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - name: Setup Terraform
-  #       uses: hashicorp/setup-terraform@v3
-  #     - name: Terraform Format
-  #       run: terraform fmt -check
-  #     - name: Terraform Init
-  #       run: terraform init
-  #     - name: Terraform Validate
-  #       run: terraform validate
-  #     - name: TFLint Check
-  #       uses: terraform-linters/setup-tflint@v4
-  #     - run: tflint --init
-  #     - run: tflint
-  #     - name: Terraform Plan
-  #       if: github.event_name == 'pull_request'
-  #       run: terraform plan -out=tfplan
-  #     - name: Terraform Apply
-  #       if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
-  #       run: terraform apply -auto-approve

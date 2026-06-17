@@ -174,7 +174,7 @@
           & Automated Pipelines
         </h1>
         <p class="hero-description">
-          19+ years in IT delivering cloud infrastructure from scratch to
+          20+ years in IT delivering cloud infrastructure from scratch to
           production. Expert in AWS & GCP migration, GitOps automation,
           cost-effective Kubernetes autoscaling, and robust MLOps reliability.
         </p>
@@ -208,7 +208,7 @@
       <section id="about" class="container">
         <div class="stats-grid">
           <div class="stat-card">
-            <div class="stat-number gradient-text">19+</div>
+            <div class="stat-number gradient-text">20+</div>
             <div class="stat-label">Years in IT</div>
           </div>
           <div class="stat-card">
@@ -216,7 +216,7 @@
             <div class="stat-label">Years Contracting</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number gradient-text">100+</div>
+            <div class="stat-number gradient-text">500+</div>
             <div class="stat-label">Microservices Migrated</div>
           </div>
           <div class="stat-card">
@@ -326,50 +326,266 @@
             global clients.
           </p>
 
-          <div class="case-studies-grid">
-            <!-- Case 1 -->
-            <div class="case-card">
-              <div>
-                <div class="case-meta">
-                  <span>METRO Digital</span>
-                  <span>GCP / GKE</span>
+          <div class="carousel-container">
+            <button class="carousel-btn prev" aria-label="Previous case study">
+              ❮
+            </button>
+            <div class="case-studies-grid carousel-track" id="cases-track">
+              <!-- Case 1: METRO DB Migration -->
+              <div class="case-card">
+                <div>
+                  <div class="case-meta">
+                    <span>METRO Digital</span>
+                    <span>GCP / NoSQL</span>
+                  </div>
+                  <h3>GCP & NoSQL Database Migration</h3>
+                  <p>
+                    Planned and executed the migration of a fleet of nearly a
+                    hundred microservices into GCP, and successfully migrated a
+                    critical NoSQL database to another SaaS vendor.
+                  </p>
                 </div>
-                <h3>Kubernetes & GitOps Migration</h3>
-                <p>
-                  Designed the GCP migration path and GitOps deployment logic
-                  for a fleet of nearly 100 microservices. Replaced internal CD
-                  tools with ArgoCD and migrated secrets to Google Secret
-                  Manager using SOPS and Jenkins integration.
-                </p>
+                <div class="tag-list">
+                  <span class="tag">GCP</span>
+                  <span class="tag">Kustomize</span>
+                  <span class="tag">NoSQL</span>
+                </div>
               </div>
-              <div class="tag-list">
-                <span class="tag">ArgoCD</span>
-                <span class="tag">GKE Auto-Scaling</span>
-                <span class="tag">SOPS</span>
-              </div>
-            </div>
 
-            <!-- Case 2 -->
-            <div class="case-card">
-              <div>
-                <div class="case-meta">
-                  <span>Voyc AI</span>
-                  <span>AWS / EKS</span>
+              <!-- Case 2: METRO ArgoCD -->
+              <div class="case-card">
+                <div>
+                  <div class="case-meta">
+                    <span>METRO Digital</span>
+                    <span>GitOps / K8s</span>
+                  </div>
+                  <h3>GitOps & ArgoCD Migration</h3>
+                  <p>
+                    Replaced internal CD tools with ArgoCD, establishing an
+                    app-of-apps pattern to manage and deploy over 100+
+                    microservices efficiently.
+                  </p>
                 </div>
-                <h3>AI-Powered Scaling Architecture</h3>
-                <p>
-                  Designed and provisioned AWS cloud architecture for AI-powered
-                  compliance monitoring. Automated complete infrastructure using
-                  OpenTofu, Terraform, and Terragrunt, deploying EKS with
-                  Karpenter for optimal GPU scaling.
-                </p>
+                <div class="tag-list">
+                  <span class="tag">ArgoCD</span>
+                  <span class="tag">GitOps</span>
+                  <span class="tag">Terraform</span>
+                </div>
               </div>
-              <div class="tag-list">
-                <span class="tag">OpenTofu</span>
-                <span class="tag">Karpenter</span>
-                <span class="tag">GPU Instances</span>
+
+              <!-- Case 3: METRO Routing -->
+              <div class="case-card">
+                <div>
+                  <div class="case-meta">
+                    <span>METRO Digital</span>
+                    <span>Networking</span>
+                  </div>
+                  <h3>Web Routing Architecture</h3>
+                  <p>
+                    Modernized web routing by replacing legacy HAProxy load
+                    balancers with secure Gateway API and GCP Private Service
+                    Connect (PSC).
+                  </p>
+                </div>
+                <div class="tag-list">
+                  <span class="tag">Gateway API</span>
+                  <span class="tag">GCP PSC</span>
+                  <span class="tag">Networking</span>
+                </div>
+              </div>
+
+              <!-- Case 4: METRO Secrets -->
+              <div class="case-card">
+                <div>
+                  <div class="case-meta">
+                    <span>METRO Digital</span>
+                    <span>Security</span>
+                  </div>
+                  <h3>Enterprise Secrets Management</h3>
+                  <p>
+                    Migrated secrets to GCP Secret Manager, completely
+                    automating encryption and secure delivery pipelines using
+                    Jenkins, Terraform, and SOPS.
+                  </p>
+                </div>
+                <div class="tag-list">
+                  <span class="tag">Secret Manager</span>
+                  <span class="tag">SOPS</span>
+                  <span class="tag">Security</span>
+                </div>
+              </div>
+
+              <!-- Case 5: METRO Jenkins -->
+              <div class="case-card">
+                <div>
+                  <div class="case-meta">
+                    <span>METRO Digital</span>
+                    <span>CI/CD Automation</span>
+                  </div>
+                  <h3>Dynamic CI Pipelines & Helm</h3>
+                  <p>
+                    Configured dynamic Jenkins pipelines featuring automatic
+                    repository discovery, and built fully automated Helm charts
+                    for multi-cluster CI/CD.
+                  </p>
+                </div>
+                <div class="tag-list">
+                  <span class="tag">Jenkins</span>
+                  <span class="tag">Helm</span>
+                  <span class="tag">CI/CD</span>
+                </div>
+              </div>
+
+              <!-- Case 6: Voyc AI -->
+              <div class="case-card">
+                <div>
+                  <div class="case-meta">
+                    <span>Voyc AI</span>
+                    <span>AWS / EKS</span>
+                  </div>
+                  <h3>AI-Powered Scaling Architecture</h3>
+                  <p>
+                    Designed and provisioned AWS cloud architecture for
+                    AI-powered compliance monitoring. Automated complete
+                    infrastructure using OpenTofu and Karpenter.
+                  </p>
+                </div>
+                <div class="tag-list">
+                  <span class="tag">OpenTofu</span>
+                  <span class="tag">Karpenter</span>
+                  <span class="tag">GPU Instances</span>
+                </div>
+              </div>
+
+              <!-- Case 7: Elsewhen -->
+              <div class="case-card">
+                <div>
+                  <div class="case-meta">
+                    <span>Consulting</span>
+                    <span>GCP / Python</span>
+                  </div>
+                  <h3>Cloud Architecture & ETL</h3>
+                  <p>
+                    Redesigned Cloud Architecture with a 5-layer infrastructure
+                    decomposition using Terraform. Developed an ETL pipeline in
+                    Python for Google Cloud Composer.
+                  </p>
+                </div>
+                <div class="tag-list">
+                  <span class="tag">Apache Airflow</span>
+                  <span class="tag">ETL</span>
+                  <span class="tag">BigQuery</span>
+                </div>
+              </div>
+
+              <!-- Case 8: American Robotics -->
+              <div class="case-card">
+                <div>
+                  <div class="case-meta">
+                    <span>American Robotics</span>
+                    <span>AWS / Jenkins</span>
+                  </div>
+                  <h3>DevOps Transformation</h3>
+                  <p>
+                    Planned and drove a comprehensive DevOps transformation for
+                    an American Robotics Corp, provisioning AWS infrastructure
+                    and implementing Jenkins/GitLab pipelines.
+                  </p>
+                </div>
+                <div class="tag-list">
+                  <span class="tag">AWS EKS</span>
+                  <span class="tag">Terragrunt</span>
+                  <span class="tag">ArgoCD</span>
+                </div>
+              </div>
+
+              <!-- Case 9: Media Company -->
+              <div class="case-card">
+                <div>
+                  <div class="case-meta">
+                    <span>Media Company</span>
+                    <span>Hybrid Cloud</span>
+                  </div>
+                  <h3>Next Gen TV Platform</h3>
+                  <p>
+                    Managed DevOps scope for a major US media company, designing
+                    a hybrid cloud architecture spanning GCP GKE and AWS EKS
+                    with Kafka integration.
+                  </p>
+                </div>
+                <div class="tag-list">
+                  <span class="tag">Hybrid Cloud</span>
+                  <span class="tag">Azure DevOps</span>
+                  <span class="tag">Kafka</span>
+                </div>
+              </div>
+
+              <!-- Case 10: Smart City -->
+              <div class="case-card">
+                <div>
+                  <div class="case-meta">
+                    <span>Smart City</span>
+                    <span>GCP / GKE</span>
+                  </div>
+                  <h3>Intelligent Traffic Platform</h3>
+                  <p>
+                    Designed and implemented the cloud infrastructure for Kyiv's
+                    Intelligent Traffic Management System (Green Wave),
+                    utilizing GKE and Cloud Functions.
+                  </p>
+                </div>
+                <div class="tag-list">
+                  <span class="tag">Smart City</span>
+                  <span class="tag">GKE</span>
+                  <span class="tag">IoT</span>
+                </div>
+              </div>
+
+              <!-- Case 11: MLM Company -->
+              <div class="case-card">
+                <div>
+                  <div class="case-meta">
+                    <span>E-Commerce</span>
+                    <span>K8s / Ansible</span>
+                  </div>
+                  <h3>Platform Migration & Architecture</h3>
+                  <p>
+                    Led the infrastructure engineering and Kubernetes migration
+                    for a major multi-level marketing company, architecting Helm
+                    charts and Ansible roles.
+                  </p>
+                </div>
+                <div class="tag-list">
+                  <span class="tag">Kubernetes</span>
+                  <span class="tag">Ansible</span>
+                  <span class="tag">Helm</span>
+                </div>
+              </div>
+
+              <!-- Case 12: Logistics Firm -->
+              <div class="case-card">
+                <div>
+                  <div class="case-meta">
+                    <span>Global Logistics</span>
+                    <span>CI/CD</span>
+                  </div>
+                  <h3>Legacy Systems Modernization</h3>
+                  <p>
+                    Engineered continuous delivery pipelines and optimized
+                    infrastructure for a unified front-end solution replacing 13
+                    legacy systems for a logistics giant.
+                  </p>
+                </div>
+                <div class="tag-list">
+                  <span class="tag">CI/CD</span>
+                  <span class="tag">Modernization</span>
+                  <span class="tag">Microservices</span>
+                </div>
               </div>
             </div>
+            <button class="carousel-btn next" aria-label="Next case study">
+              ❯
+            </button>
           </div>
         </div>
       </section>
@@ -383,125 +599,191 @@
             Code, and AI communities.
           </p>
 
-          <div class="case-studies-grid">
-            <!-- OS 0 -->
-            <div class="case-card">
-              <div>
-                <div class="case-meta">
-                  <span>Owner & Author</span>
-                  <span>Portfolio Codebase</span>
+          <div class="carousel-container">
+            <button class="carousel-btn prev" aria-label="Previous project">
+              ❮
+            </button>
+            <div class="case-studies-grid carousel-track" id="os-track">
+              <!-- OS 0 -->
+              <div class="case-card">
+                <div>
+                  <div class="case-meta">
+                    <span>Owner & Author</span>
+                    <span>Portfolio Codebase</span>
+                  </div>
+                  <h3>korn.systems Website</h3>
+                  <p>
+                    Development, automated deployment, and open-sourcing of the
+                    <a
+                      href="https://github.com/ivankorn/korn.systems"
+                      target="_blank"
+                      rel="noopener"
+                      >personal portfolio website</a
+                    >
+                    and AI assistant platform.
+                  </p>
                 </div>
-                <h3>korn.systems Website</h3>
-                <p>
-                  Development, automated deployment, and open-sourcing of the
+                <div class="tag-list">
+                  <span class="tag">HTML/CSS/JS</span>
+                  <span class="tag">GitHub Actions</span>
+                  <span class="tag">Playwright</span>
+                </div>
+              </div>
+
+              <!-- OS 1 -->
+              <div class="case-card">
+                <div>
+                  <div class="case-meta">
+                    <span>Owner & Author</span>
+                    <span>Terraform Registry</span>
+                  </div>
+                  <h3>terraform-spaceship-github-pages</h3>
+                  <p>
+                    Built and published a
+                    <a
+                      href="https://registry.terraform.io/modules/ivankorn/github-pages/spaceship/latest"
+                      target="_blank"
+                      rel="noopener"
+                      >Terraform module</a
+                    >
+                    to fully automate GitHub Pages repositories and Spaceship
+                    custom domain DNS records.
+                  </p>
+                </div>
+                <div class="tag-list">
+                  <span class="tag">Terraform</span>
+                  <span class="tag">Spaceship</span>
+                  <span class="tag">GitHub Pages</span>
+                </div>
+              </div>
+
+              <!-- OS 2 -->
+              <div class="case-card">
+                <div>
+                  <div class="case-meta">
+                    <span>Contributor</span>
+                    <span>AI Coding Agents</span>
+                  </div>
+                  <h3>terraform-skill</h3>
+                  <p>
+                    Contributed to the open-source
+                    <a
+                      href="https://github.com/antonbabenko/terraform-skill"
+                      target="_blank"
+                      class="inline-link"
+                      >terraform-skill</a
+                    >
+                    plugin for autonomous AI coding agents.
+                  </p>
+                </div>
+                <div class="tag-list">
+                  <span class="tag">AI Agents</span>
+                  <span class="tag">Terraform</span>
+                  <span class="tag">LLM</span>
+                </div>
+                <div class="case-links" style="margin-top: 1rem">
                   <a
-                    href="https://github.com/ivankorn/korn.systems"
+                    href="https://github.com/antonbabenko/terraform-skill"
                     target="_blank"
-                    rel="noopener"
-                    >personal portfolio website</a
-                  >
-                  and AI assistant platform.
-                </p>
-              </div>
-              <div class="tag-list">
-                <span class="tag">HTML/CSS/JS</span>
-                <span class="tag">GitHub Actions</span>
-                <span class="tag">Playwright</span>
-              </div>
-            </div>
-
-            <!-- OS 1 -->
-            <div class="case-card">
-              <div>
-                <div class="case-meta">
-                  <span>Owner & Author</span>
-                  <span>Terraform Registry</span>
+                    class="btn-primary"
+                    >View GitHub <i class="fa-brands fa-github"></i
+                  ></a>
                 </div>
-                <h3>terraform-spaceship-github-pages</h3>
-                <p>
-                  Built and published a
+              </div>
+
+              <!-- OS 3 -->
+              <div class="case-card">
+                <div>
+                  <div class="case-meta">
+                    <span>Contributor</span>
+                    <span>AI Coding Agents</span>
+                  </div>
+                  <h3>agent-plugins</h3>
+                  <p>
+                    Contributed to the open-source
+                    <a
+                      href="https://github.com/antonbabenko/agent-plugins/tree/master"
+                      target="_blank"
+                      class="inline-link"
+                      >agent-plugins</a
+                    >
+                    repository (specifically the
+                    <code>code-intelligence</code> skill) for AI coding agents.
+                  </p>
+                </div>
+                <div class="tag-list">
+                  <span class="tag">AI Agents</span>
+                  <span class="tag">LSP</span>
+                  <span class="tag">LLM</span>
+                </div>
+                <div class="case-links" style="margin-top: 1rem">
                   <a
-                    href="https://registry.terraform.io/modules/ivankorn/github-pages/spaceship/latest"
+                    href="https://github.com/antonbabenko/agent-plugins/tree/master"
                     target="_blank"
-                    rel="noopener"
-                    >Terraform module</a
-                  >
-                  to fully automate GitHub Pages repositories and Spaceship
-                  custom domain DNS records.
-                </p>
-              </div>
-              <div class="tag-list">
-                <span class="tag">Terraform</span>
-                <span class="tag">Spaceship</span>
-                <span class="tag">GitHub Pages</span>
-              </div>
-            </div>
-
-            <!-- OS 2 -->
-            <div class="case-card">
-              <div>
-                <div class="case-meta">
-                  <span>Contributor</span>
-                  <span>AI Agent Skills</span>
+                    class="btn-primary"
+                    >View GitHub <i class="fa-brands fa-github"></i
+                  ></a>
                 </div>
-                <h3>Anton Babenko's Skills</h3>
-                <p>
-                  Contributed to Anton Babenko's
-                  <code>terraform-skill</code> and
-                  <code>code-intelligence</code> skills, extending the
-                  capabilities of AI coding agents for DevOps and infrastructure
-                  management tasks.
-                </p>
               </div>
-              <div class="tag-list">
-                <span class="tag">AI Agents</span>
-                <span class="tag">Terraform</span>
-                <span class="tag">Code Intelligence</span>
-              </div>
-            </div>
 
-            <!-- OS 3 -->
-            <div class="case-card">
-              <div>
-                <div class="case-meta">
-                  <span>Google CFT</span>
-                  <span>Open Source</span>
+              <!-- OS 4 -->
+              <div class="case-card">
+                <div>
+                  <div class="case-meta">
+                    <span>Google CFT</span>
+                    <span>Open Source</span>
+                  </div>
+                  <h3>Cloud Foundation Toolkit</h3>
+                  <p>
+                    Contributor to Google Cloud Platform's official Deployment
+                    Manager templates, tools, and automation scripts.
+                  </p>
                 </div>
-                <h3>Cloud Foundation Toolkit</h3>
-                <p>
-                  Contributor to Google Cloud Platform's official Terraform and
-                  Deployment Manager modules. Developed HCL modules, custom
-                  tests, and automated integration builds within the HashiCorp
-                  ecosystem.
-                </p>
+                <div class="tag-list">
+                  <span class="tag">Google Org</span>
+                  <span class="tag">Automation</span>
+                </div>
+                <div class="case-links" style="margin-top: 1rem">
+                  <a
+                    href="https://github.com/GoogleCloudPlatform/cloud-foundation-toolkit"
+                    target="_blank"
+                    class="btn-primary"
+                    >View GitHub <i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
               </div>
-              <div class="tag-list">
-                <span class="tag">Terraform Modules</span>
-                <span class="tag">Google Org</span>
-                <span class="tag">Go Tests</span>
-              </div>
-            </div>
 
-            <!-- OS 4 -->
-            <div class="case-card">
-              <div>
-                <div class="case-meta">
-                  <span>Lead Designer</span>
-                  <span>GlobalLogic</span>
+              <!-- OS 5 -->
+              <div class="case-card">
+                <div>
+                  <div class="case-meta">
+                    <span>Google CFT</span>
+                    <span>Open Source</span>
+                  </div>
+                  <h3>Terraform Google Modules</h3>
+                  <p>
+                    Contributor to Google Cloud Platform's official Terraform
+                    modules. Developed HCL modules, custom tests, and automated
+                    integration builds within the HashiCorp ecosystem.
+                  </p>
                 </div>
-                <h3>GL Smart City Platform</h3>
-                <p>
-                  Designed Kiev's Intelligent Traffic Management System (Green
-                  Wave) deploying GKE, Cloud Functions, and Cloud Build for
-                  city-wide automated traffic flows.
-                </p>
-              </div>
-              <div class="tag-list">
-                <span class="tag">GKE</span>
-                <span class="tag">Cloud Functions</span>
-                <span class="tag">Smart City</span>
+                <div class="tag-list">
+                  <span class="tag">Terraform Modules</span>
+                  <span class="tag">Go Tests</span>
+                </div>
+                <div class="case-links" style="margin-top: 1rem">
+                  <a
+                    href="https://github.com/terraform-google-modules"
+                    target="_blank"
+                    class="btn-primary"
+                    >View GitHub <i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
               </div>
             </div>
+            <button class="carousel-btn next" aria-label="Next project">
+              ❯
+            </button>
           </div>
         </div>
       </section>
@@ -743,7 +1025,7 @@
                     </li>
                     <li>
                       Migrated all application deployments to ArgoCD
-                      (app-of-apps pattern) for 100+ microservices.
+                      (app-of-apps pattern) for 500+ microservices.
                     </li>
                     <li>
                       Designed web routing replacing HAProxy load balancing with
