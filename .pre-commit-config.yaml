@@ -36,7 +36,3 @@ repos:
         entry: trivy fs --skip-dirs ./tests .
         language: system
         pass_filenames: false
-
-
-
-
