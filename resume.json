@@ -28,6 +28,19 @@
   },
   "work": [
     {
+      "name": "korn.systems",
+      "position": "Creator / AI Architect",
+      "url": "https://korn.systems",
+      "startDate": "2024-01",
+      "endDate": "",
+      "summary": "Development of an advanced AI assistant and foundational infrastructure modules.",
+      "highlights": [
+        "Architected and developed the korn.systems AI assistant integration.",
+        "Built and open-sourced terraform-spaceship-github-pages module for automated GitHub Pages and DNS management.",
+        "Developed, automated deployment, and open-sourced the korn.systems portfolio website."
+      ]
+    },
+    {
       "name": "METRO Digital",
       "position": "Engineering Consultant (Contractor)",
       "url": "https://metro.digital",
@@ -236,6 +249,31 @@
         "Art",
         "Flowers"
       ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "korn.systems Portfolio",
+      "description": "Development, automated deployment, and open-sourcing of the personal portfolio website and AI assistant platform.",
+      "url": "https://github.com/ivankorn/korn.systems"
+    },
+    {
+      "name": "terraform-spaceship-github-pages",
+      "description": "Owned and authored Terraform module for automated GitHub Pages and Spaceship DNS configuration.",
+      "url": "https://registry.terraform.io/modules/ivankorn/github-pages/spaceship/latest"
+    },
+    {
+      "name": "Anton Babenko's terraform-skill and code-intelegence skills",
+      "description": "Contributed to open source AI agent skills for Terraform and Code Intelligence.",
+      "url": "https://github.com/antonbabenko"
+    },
+    {
+      "name": "Google Cloud Foundation Toolkit (CFT)",
+      "description": "Contributed official Terraform modules, Deployment Manager templates, tests, and automation scripts for Google Cloud."
+    },
+    {
+      "name": "GL Smart City Platform (Green Wave)",
+      "description": "Designed Kiev's Intelligent Traffic Management System deploying GKE, Cloud Functions, and Cloud Build."
     }
   ]
 }

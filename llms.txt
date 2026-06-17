@@ -12,3 +12,8 @@
 - [Main Site](https://korn.systems/)
 - [Raw Resume](/resume.md)
 - [JSON Resume](/resume.json)
+
+## Open Source / Portfolio
+- [korn.systems Website Code](https://github.com/ivankorn/korn.systems): Development, automation, and open-sourcing of this personal portfolio and AI assistant integration.
+- [terraform-spaceship-github-pages](https://registry.terraform.io/modules/ivankorn/github-pages/spaceship/latest): Authored and published Terraform module for automated GitHub Pages and Spaceship DNS configuration.
+- [AI Agent Skills](https://github.com/antonbabenko): Contributed to Anton Babenko's `terraform-skill` and `code-intelligence` skills.
