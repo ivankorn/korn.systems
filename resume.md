@@ -34,6 +34,17 @@ Specializes in architecting scalable cloud platforms, automating complete SDLC p
 
 ## Work Experience
 
+### Creator / AI Architect
+
+**korn.systems** | _January 2024 – Present_ | Remote
+
+- **Projects**: Development of korn.systems AI assistant and foundational infrastructure modules.
+- **Achievements**:
+  - Architected and developed the korn.systems AI assistant integration.
+  - Built and open-sourced the `terraform-spaceship-github-pages` module for automated GitHub Pages and DNS management.
+  - Developed, automated deployment, and open-sourced the korn.systems portfolio website.
+- **Tech Stack**: Terraform/HCL2, AI Integrations, Cloud Infrastructure.
+
 ### Engineering Consultant (Contractor)
 
 **METRO Digital** | _June 2025 – December 2025 (6 mos)_ | Remote
@@ -130,6 +141,16 @@ Specializes in architecting scalable cloud platforms, automating complete SDLC p
   - Led DevOps and configuration management for an American e-commerce client.
 - **Senior DevOps Engineer (Kyiv, Ukraine - Sep 2015 – Feb 2017)**:
   - Worked on continuous integration, build flows (Jenkins DSL), and Ansible automation for multi-node Hybris/Apache clusters.
+
+---
+
+## Open Source Contributions & Projects
+
+- **[korn.systems Portfolio](https://github.com/ivankorn/korn.systems)**: Development, automated deployment, and open-sourcing of the personal portfolio website and AI assistant platform.
+- **[terraform-spaceship-github-pages](https://registry.terraform.io/modules/ivankorn/github-pages/spaceship/latest)**: Owned and authored Terraform module for automated GitHub Pages and Spaceship DNS configuration.
+- **AI Agent Skills**: Contributed to Anton Babenko's `terraform-skill` and `code-intelegence` skills for AI coding agents.
+- **Google Cloud Foundation Toolkit (CFT)**: Contributed official Terraform modules, Deployment Manager templates, tests, and automation scripts for Google Cloud.
+- **GL Smart City Platform (Green Wave)**: Designed Kiev's Intelligent Traffic Management System deploying GKE, Cloud Functions, and Cloud Build.
 
 ---
 
