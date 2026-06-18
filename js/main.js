@@ -303,3 +303,126 @@ carousels.forEach((container) => {
     });
   }
 });
+
+// --- 7. Dynamic Resume Rendering ---
+async function loadResumeData() {
+  try {
+    const response = await fetch("/resume.json");
+    if (!response.ok) return;
+    const resume = await response.json();
+
+    const casesTrack = document.getElementById("cases-track");
+    const osTrack = document.getElementById("os-track");
+    const timelineTrack = document.getElementById("timeline-track");
+    const osNames = [
+      "korn.systems",
+      "terraform-spaceship-github-pages",
+      "Google CFT",
+    ];
+
+    if (casesTrack && osTrack && resume.work) {
+      resume.work.forEach((job) => {
+        const isOS =
+          osNames.includes(job.name) ||
+          (job.name && job.name.toLowerCase().includes("open source"));
+
+        let tagsHtml = "";
+        if (job.highlights) {
+          tagsHtml = `<div class="tag-list">${job.highlights
+            .slice(0, 3)
+            .map((h) => `<span class="tag">${h.split(" ")[0]}</span>`)
+            .join("")}</div>`;
+        }
+
+        const cardHtml = `
+          <div class="case-card">
+            <div>
+              <div class="case-meta">
+                <span>${job.name}</span>
+                <span>${job.position}</span>
+              </div>
+              <h3>${job.name}</h3>
+              <p>${job.summary}</p>
+            </div>
+            ${tagsHtml}
+            ${job.url ? `<div class="case-links" style="margin-top: 1rem"><a href="${job.url}" target="_blank" class="btn-primary">View</a></div>` : ""}
+          </div>
+        `;
+
+        if (isOS) {
+          osTrack.insertAdjacentHTML("beforeend", cardHtml);
+        } else {
+          casesTrack.insertAdjacentHTML("beforeend", cardHtml);
+        }
+
+        if (timelineTrack) {
+          const timelineHtml = `
+            <div class="timeline-item">
+              <div class="timeline-badge"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">${job.startDate} – ${job.endDate || "Present"}</div>
+                <h3>${job.position}</h3>
+                <div class="timeline-company">${job.name}</div>
+                <div class="timeline-details">
+                  <ul>${job.highlights ? job.highlights.map((h) => `<li>${h}</li>`).join("") : ""}</ul>
+                </div>
+                <div class="timeline-toggle-btn">Details</div>
+              </div>
+            </div>
+          `;
+          timelineTrack.insertAdjacentHTML("beforeend", timelineHtml);
+        }
+      });
+    }
+
+    const timelineContents = document.querySelectorAll(".timeline-content");
+    timelineContents.forEach((content) => {
+      content.addEventListener("click", (e) => {
+        if (e.target.tagName === "A") return;
+        const isActive = content.classList.contains("active");
+        timelineContents.forEach((c) => c.classList.remove("active"));
+        if (!isActive) content.classList.add("active");
+      });
+    });
+    if (timelineContents.length > 0)
+      timelineContents[0].classList.add("active");
+
+    initCarousels();
+  } catch (error) {
+    console.error("Error loading resume.json", error);
+  }
+}
+
+function initCarousels() {
+  const carousels = document.querySelectorAll(".carousel-container");
+  carousels.forEach((container) => {
+    const track = container.querySelector(".carousel-track");
+    const prevBtn = container.querySelector(".carousel-btn.prev");
+    const nextBtn = container.querySelector(".carousel-btn.next");
+
+    if (!track) return;
+
+    const scrollAmount = () => {
+      const card = track.querySelector(".case-card");
+      return card ? card.offsetWidth + 32 : 300;
+    };
+
+    if (nextBtn) {
+      const newNext = nextBtn.cloneNode(true);
+      nextBtn.parentNode.replaceChild(newNext, nextBtn);
+      newNext.addEventListener("click", () =>
+        track.scrollBy({ left: scrollAmount(), behavior: "smooth" }),
+      );
+    }
+
+    if (prevBtn) {
+      const newPrev = prevBtn.cloneNode(true);
+      prevBtn.parentNode.replaceChild(newPrev, prevBtn);
+      newPrev.addEventListener("click", () =>
+        track.scrollBy({ left: -scrollAmount(), behavior: "smooth" }),
+      );
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", loadResumeData);
