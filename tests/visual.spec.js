@@ -11,10 +11,17 @@ expect.extend({
 
 test.describe("Visual Regression Tests", () => {
   test("case studies carousel visual layout", async ({ page }) => {
+    await page.addInitScript(() => {
+      const originalScrollBy = Element.prototype.scrollBy;
+      Element.prototype.scrollBy = function(options) {
+        if (typeof options === 'object') { options.behavior = 'auto'; }
+        return originalScrollBy.call(this, options);
+      };
+    });
     await page.goto("/");
     await page.addStyleTag({ content: `
       * { scroll-behavior: auto !important; }
-      #case-studies, #open-source { min-height: 700px !important; }
+      #case-studies, #open-source { height: 800px !important; box-sizing: border-box !important; overflow: hidden !important; }
     `});
     const caseStudiesSection = page.locator("#case-studies");
     await caseStudiesSection.scrollIntoViewIfNeeded();
@@ -61,10 +68,17 @@ test.describe("Visual Regression Tests", () => {
   });
 
   test("open source carousel visual layout", async ({ page }) => {
+    await page.addInitScript(() => {
+      const originalScrollBy = Element.prototype.scrollBy;
+      Element.prototype.scrollBy = function(options) {
+        if (typeof options === 'object') { options.behavior = 'auto'; }
+        return originalScrollBy.call(this, options);
+      };
+    });
     await page.goto("/");
     await page.addStyleTag({ content: `
       * { scroll-behavior: auto !important; }
-      #case-studies, #open-source { min-height: 700px !important; }
+      #case-studies, #open-source { height: 800px !important; box-sizing: border-box !important; overflow: hidden !important; }
     `});
     const osSection = page.locator("#open-source");
     await osSection.scrollIntoViewIfNeeded();

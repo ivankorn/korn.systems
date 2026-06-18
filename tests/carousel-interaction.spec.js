@@ -6,6 +6,13 @@ test.describe('Carousel Interaction Tests', () => {
   });
 
   test('case studies carousel should scroll when next and prev buttons are clicked', async ({ page }) => {
+    await page.addInitScript(() => {
+      const originalScrollBy = Element.prototype.scrollBy;
+      Element.prototype.scrollBy = function(options) {
+        if (typeof options === 'object') { options.behavior = 'auto'; }
+        return originalScrollBy.call(this, options);
+      };
+    });
     await page.addStyleTag({ content: '* { scroll-behavior: auto !important; }' });
     const track = page.locator('#cases-track');
     const nextBtn = page.locator('#case-studies .carousel-btn.next');
@@ -34,6 +41,13 @@ test.describe('Carousel Interaction Tests', () => {
   });
 
   test('open source carousel should scroll when next and prev buttons are clicked', async ({ page }) => {
+    await page.addInitScript(() => {
+      const originalScrollBy = Element.prototype.scrollBy;
+      Element.prototype.scrollBy = function(options) {
+        if (typeof options === 'object') { options.behavior = 'auto'; }
+        return originalScrollBy.call(this, options);
+      };
+    });
     await page.addStyleTag({ content: '* { scroll-behavior: auto !important; }' });
     const track = page.locator('#os-track');
     const nextBtn = page.locator('#open-source .carousel-btn.next');
