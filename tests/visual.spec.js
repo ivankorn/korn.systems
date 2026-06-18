@@ -35,7 +35,7 @@ test.describe("Visual Regression Tests", () => {
     // First screenshot of the section layout (headers, buttons, track)
     await expect(caseStudiesSection).toHaveScreenshot(
       "case-studies-section-layout.png",
-      { maxDiffPixelRatio: 0.05 },
+      { maxDiffPixelRatio: 0.035 },
     );
 
     // Test every single item visually
@@ -60,7 +60,7 @@ test.describe("Visual Regression Tests", () => {
           width: 400,
           height: 450,
         },
-        maxDiffPixelRatio: 0.08,
+        maxDiffPixelRatio: 0.025,
       });
     }
   });
@@ -88,7 +88,7 @@ test.describe("Visual Regression Tests", () => {
     await osSection.scrollIntoViewIfNeeded();
 
     await expect(osSection).toHaveScreenshot("open-source-section-layout.png", {
-      maxDiffPixelRatio: 0.05,
+      maxDiffPixelRatio: 0.035,
     });
 
     const cards = page.locator("#os-track .case-card");
@@ -110,7 +110,7 @@ test.describe("Visual Regression Tests", () => {
           width: 400,
           height: 450,
         },
-        maxDiffPixelRatio: 0.08,
+        maxDiffPixelRatio: 0.025,
       });
     }
   });
