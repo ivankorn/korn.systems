@@ -30,5 +30,17 @@ module.exports = defineConfig({
       name: "Mobile Chrome",
       use: { ...devices["Pixel 5"] },
     },
+    ...(process.env.CI
+      ? [
+          {
+            name: "webkit",
+            use: { ...devices["Desktop Safari"] },
+          },
+          {
+            name: "Mobile Safari",
+            use: { ...devices["iPhone 12"] },
+          },
+        ]
+      : []),
   ],
 });
