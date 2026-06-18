@@ -7,7 +7,7 @@ on:
     branches: [ "master", "main" ]
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   lint-and-security:
@@ -28,12 +28,9 @@ jobs:
       - name: Run Pre-commit
         run: pipx run pre-commit run --all-files
 
-
   browser-tests:
     runs-on: ubuntu-latest
     needs: [lint-and-security]
-    container:
-      image: mcr.microsoft.com/playwright:v1.60.0-jammy
     steps:
       - uses: actions/checkout@v4
       - name: Setup Node.js
@@ -43,7 +40,7 @@ jobs:
       - name: Install dependencies
         run: npm ci || npm install
       - name: Run Playwright tests
-        run: npx playwright test --update-snapshots || true
+        run: npx playwright test
       - uses: actions/upload-artifact@v4
         if: always()
         with:
