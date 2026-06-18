@@ -82,4 +82,32 @@ test.describe("AI Page Content", () => {
       "AI-Powered Calls Assistant",
     );
   });
+
+  test("contains tech consultation block with correct wording and attributes", async ({
+    page,
+  }) => {
+    await page.goto("/ai/");
+    const consultationSection = page.locator(
+      "section:has-text('Book a 30-Min Tech Consultation')",
+    );
+    await expect(consultationSection).toBeVisible();
+
+    await expect(consultationSection.locator("h3")).toContainText(
+      "Book a 30-Min Tech Consultation",
+    );
+    await expect(
+      consultationSection
+        .locator("p")
+        .filter({ hasText: "Schedule a focused" }),
+    ).toBeVisible();
+
+    const scheduleBtn = consultationSection.locator("a.open-booking");
+    await expect(scheduleBtn).toBeVisible();
+    await expect(scheduleBtn).toContainText("Schedule meeting");
+    await expect(scheduleBtn).toHaveAttribute("href", "#");
+    await expect(scheduleBtn).toHaveAttribute(
+      "onclick",
+      "openCalendarModal(event)",
+    );
+  });
 });
