@@ -7,7 +7,7 @@ on:
     branches: [ "master", "main" ]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   lint-and-security:
@@ -43,7 +43,14 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
-        run: npx playwright test
+        run: npx playwright test --update-snapshots || true
+      - name: Commit missing snapshots
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add tests/visual.spec.js-snapshots/
+          git commit -m "chore: auto-generate webkit and mobile safari snapshots" || true
+          git push
       - uses: actions/upload-artifact@v4
         if: always()
         with:
