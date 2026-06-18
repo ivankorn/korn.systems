@@ -24,7 +24,7 @@ test.describe("Visual Regression Tests", () => {
     await page.addStyleTag({
       content: `
       * { scroll-behavior: auto !important; }
-      #case-studies, #open-source { height: 800px !important; box-sizing: border-box !important; overflow: hidden !important; }
+      #case-studies, #open-source { height: 800px !important; max-height: 800px !important; box-sizing: border-box !important; overflow: hidden !important; border: none !important; margin: 0 !important; padding: 0 !important; }
       .case-card { height: 450px !important; width: 400px !important; box-sizing: border-box !important; overflow: hidden !important; }
     `,
     });
@@ -46,8 +46,8 @@ test.describe("Visual Regression Tests", () => {
     for (let i = 0; i < count; i++) {
       // Ensure the card is fully in view by directly setting scrollLeft to avoid Safari snap hangs
       await page.evaluate((index) => {
-        const track = document.querySelector('#cases-track');
-        const cards = track.querySelectorAll('.case-card');
+        const track = document.querySelector("#cases-track");
+        const cards = track.querySelectorAll(".case-card");
         track.scrollLeft = cards[index].offsetLeft;
       }, i);
       await page.waitForTimeout(200);
@@ -79,7 +79,7 @@ test.describe("Visual Regression Tests", () => {
     await page.addStyleTag({
       content: `
       * { scroll-behavior: auto !important; }
-      #case-studies, #open-source { height: 800px !important; box-sizing: border-box !important; overflow: hidden !important; }
+      #case-studies, #open-source { height: 800px !important; max-height: 800px !important; box-sizing: border-box !important; overflow: hidden !important; border: none !important; margin: 0 !important; padding: 0 !important; }
       .case-card { height: 450px !important; width: 400px !important; box-sizing: border-box !important; overflow: hidden !important; }
     `,
     });
@@ -96,8 +96,8 @@ test.describe("Visual Regression Tests", () => {
 
     for (let i = 0; i < count; i++) {
       await page.evaluate((index) => {
-        const track = document.querySelector('#os-track');
-        const cards = track.querySelectorAll('.case-card');
+        const track = document.querySelector("#os-track");
+        const cards = track.querySelectorAll(".case-card");
         track.scrollLeft = cards[index].offsetLeft;
       }, i);
       await page.waitForTimeout(200);
