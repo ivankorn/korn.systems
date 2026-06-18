@@ -12,6 +12,10 @@ expect.extend({
 test.describe("Visual Regression Tests", () => {
   test("case studies carousel visual layout", async ({ page }) => {
     await page.goto("/");
+    await page.addStyleTag({ content: `
+      * { scroll-behavior: auto !important; }
+      #case-studies, #open-source { min-height: 700px !important; }
+    `});
     const caseStudiesSection = page.locator("#case-studies");
     await caseStudiesSection.scrollIntoViewIfNeeded();
 
@@ -34,8 +38,17 @@ test.describe("Visual Regression Tests", () => {
       
       prevScrollLeft = currentScroll;
       await nextBtn.click();
-      await page.waitForTimeout(500); // wait for smooth scroll animation
       
+      // Wait for scrollLeft to actually change to avoid race conditions
+      await page.waitForFunction(
+        (data) => {
+          const el = document.querySelector(data.selector);
+          return el.scrollLeft !== data.prev;
+        },
+        { selector: '#cases-track', prev: currentScroll },
+        { timeout: 2000 }
+      ).catch(() => {}); // Catch timeout if it reached the end and didn't scroll
+
       let newScroll = await track.evaluate(node => node.scrollLeft);
       if (newScroll === currentScroll) break; // Didn't scroll further
 
@@ -49,6 +62,10 @@ test.describe("Visual Regression Tests", () => {
 
   test("open source carousel visual layout", async ({ page }) => {
     await page.goto("/");
+    await page.addStyleTag({ content: `
+      * { scroll-behavior: auto !important; }
+      #case-studies, #open-source { min-height: 700px !important; }
+    `});
     const osSection = page.locator("#open-source");
     await osSection.scrollIntoViewIfNeeded();
 
@@ -69,8 +86,16 @@ test.describe("Visual Regression Tests", () => {
       
       prevScrollLeft = currentScroll;
       await nextBtn.click();
-      await page.waitForTimeout(500); 
       
+      await page.waitForFunction(
+        (data) => {
+          const el = document.querySelector(data.selector);
+          return el.scrollLeft !== data.prev;
+        },
+        { selector: '#os-track', prev: currentScroll },
+        { timeout: 2000 }
+      ).catch(() => {});
+
       let newScroll = await track.evaluate(node => node.scrollLeft);
       if (newScroll === currentScroll) break;
 
