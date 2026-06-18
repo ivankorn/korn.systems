@@ -51,7 +51,10 @@ test.describe("Visual Regression Tests", () => {
         const card = cards[index];
         const trackRect = track.getBoundingClientRect();
         const cardRect = card.getBoundingClientRect();
-        track.scrollBy({ left: cardRect.left - trackRect.left, behavior: 'instant' });
+        track.scrollBy({
+          left: cardRect.left - trackRect.left,
+          behavior: "instant",
+        });
       }, i);
       await expect(cards.nth(i)).toHaveScreenshot(`case-study-card-${i}.png`, {
         maxDiffPixelRatio: 0.035,
@@ -95,7 +98,10 @@ test.describe("Visual Regression Tests", () => {
         const card = cards[index];
         const trackRect = track.getBoundingClientRect();
         const cardRect = card.getBoundingClientRect();
-        track.scrollBy({ left: cardRect.left - trackRect.left, behavior: 'instant' });
+        track.scrollBy({
+          left: cardRect.left - trackRect.left,
+          behavior: "instant",
+        });
       }, i);
       await expect(cards.nth(i)).toHaveScreenshot(`open-source-card-${i}.png`, {
         maxDiffPixelRatio: 0.035,
