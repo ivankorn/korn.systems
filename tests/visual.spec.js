@@ -55,8 +55,8 @@ test.describe("Visual Regression Tests", () => {
       const box = await cards.nth(i).boundingBox();
       await expect(page).toHaveScreenshot(`case-study-card-${i}.png`, {
         clip: {
-          x: Math.round(box.x),
-          y: Math.round(box.y),
+          x: Math.max(0, Math.round(box.x)),
+          y: Math.max(0, Math.round(box.y)),
           width: 400,
           height: 450,
         },
@@ -105,8 +105,8 @@ test.describe("Visual Regression Tests", () => {
       const box = await cards.nth(i).boundingBox();
       await expect(page).toHaveScreenshot(`open-source-card-${i}.png`, {
         clip: {
-          x: Math.round(box.x),
-          y: Math.round(box.y),
+          x: Math.max(0, Math.round(box.x)),
+          y: Math.max(0, Math.round(box.y)),
           width: 400,
           height: 450,
         },
