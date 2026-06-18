@@ -6,6 +6,7 @@ test.describe('Carousel Interaction Tests', () => {
   });
 
   test('case studies carousel should scroll when next and prev buttons are clicked', async ({ page }) => {
+    await page.addStyleTag({ content: '* { scroll-behavior: auto !important; }' });
     const track = page.locator('#cases-track');
     const nextBtn = page.locator('#case-studies .carousel-btn.next');
     const prevBtn = page.locator('#case-studies .carousel-btn.prev');
@@ -33,6 +34,7 @@ test.describe('Carousel Interaction Tests', () => {
   });
 
   test('open source carousel should scroll when next and prev buttons are clicked', async ({ page }) => {
+    await page.addStyleTag({ content: '* { scroll-behavior: auto !important; }' });
     const track = page.locator('#os-track');
     const nextBtn = page.locator('#open-source .carousel-btn.next');
     const prevBtn = page.locator('#open-source .carousel-btn.prev');
