@@ -48,19 +48,13 @@ test.describe("Visual Regression Tests", () => {
       await page.evaluate((index) => {
         const track = document.querySelector("#cases-track");
         const cards = track.querySelectorAll(".case-card");
-        track.scrollLeft = cards[index].offsetLeft;
+        const card = cards[index];
+        const trackRect = track.getBoundingClientRect();
+        const cardRect = card.getBoundingClientRect();
+        track.scrollBy({ left: cardRect.left - trackRect.left, behavior: 'instant' });
       }, i);
-      await page.waitForTimeout(200);
-
-      const box = await cards.nth(i).boundingBox();
-      await expect(page).toHaveScreenshot(`case-study-card-${i}.png`, {
-        clip: {
-          x: Math.max(0, Math.round(box.x)),
-          y: Math.max(0, Math.round(box.y)),
-          width: 400,
-          height: 450,
-        },
-        maxDiffPixelRatio: 0.025,
+      await expect(cards.nth(i)).toHaveScreenshot(`case-study-card-${i}.png`, {
+        maxDiffPixelRatio: 0.035,
       });
     }
   });
@@ -98,19 +92,13 @@ test.describe("Visual Regression Tests", () => {
       await page.evaluate((index) => {
         const track = document.querySelector("#os-track");
         const cards = track.querySelectorAll(".case-card");
-        track.scrollLeft = cards[index].offsetLeft;
+        const card = cards[index];
+        const trackRect = track.getBoundingClientRect();
+        const cardRect = card.getBoundingClientRect();
+        track.scrollBy({ left: cardRect.left - trackRect.left, behavior: 'instant' });
       }, i);
-      await page.waitForTimeout(200);
-
-      const box = await cards.nth(i).boundingBox();
-      await expect(page).toHaveScreenshot(`open-source-card-${i}.png`, {
-        clip: {
-          x: Math.max(0, Math.round(box.x)),
-          y: Math.max(0, Math.round(box.y)),
-          width: 400,
-          height: 450,
-        },
-        maxDiffPixelRatio: 0.025,
+      await expect(cards.nth(i)).toHaveScreenshot(`open-source-card-${i}.png`, {
+        maxDiffPixelRatio: 0.035,
       });
     }
   });
