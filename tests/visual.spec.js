@@ -44,8 +44,13 @@ test.describe("Visual Regression Tests", () => {
     const nextBtn = page.locator("#case-studies .carousel-btn.next");
 
     for (let i = 0; i < count; i++) {
-      // Ensure the card is fully in view by clicking next if needed
-      await cards.nth(i).scrollIntoViewIfNeeded();
+      // Ensure the card is fully in view by directly setting scrollLeft to avoid Safari snap hangs
+      await page.evaluate((index) => {
+        const track = document.querySelector('#cases-track');
+        const cards = track.querySelectorAll('.case-card');
+        track.scrollLeft = cards[index].offsetLeft;
+      }, i);
+      await page.waitForTimeout(200);
 
       const box = await cards.nth(i).boundingBox();
       await expect(page).toHaveScreenshot(`case-study-card-${i}.png`, {
@@ -90,7 +95,13 @@ test.describe("Visual Regression Tests", () => {
     const count = await cards.count();
 
     for (let i = 0; i < count; i++) {
-      await cards.nth(i).scrollIntoViewIfNeeded();
+      await page.evaluate((index) => {
+        const track = document.querySelector('#os-track');
+        const cards = track.querySelectorAll('.case-card');
+        track.scrollLeft = cards[index].offsetLeft;
+      }, i);
+      await page.waitForTimeout(200);
+
       const box = await cards.nth(i).boundingBox();
       await expect(page).toHaveScreenshot(`open-source-card-${i}.png`, {
         clip: {
