@@ -314,18 +314,9 @@ async function loadResumeData() {
     const casesTrack = document.getElementById("cases-track");
     const osTrack = document.getElementById("os-track");
     const timelineTrack = document.getElementById("timeline-track");
-    const osNames = [
-      "korn.systems",
-      "terraform-spaceship-github-pages",
-      "Google CFT",
-    ];
 
-    if (casesTrack && osTrack && resume.work) {
-      resume.work.forEach((job) => {
-        const isOS =
-          osNames.includes(job.name) ||
-          (job.name && job.name.toLowerCase().includes("open source"));
-
+    if (resume.work && casesTrack) {
+      resume.work.forEach((job, index) => {
         let tagsHtml = "";
         if (job.highlights) {
           tagsHtml = `<div class="tag-list">${job.highlights
@@ -349,13 +340,9 @@ async function loadResumeData() {
           </div>
         `;
 
-        if (isOS) {
-          osTrack.insertAdjacentHTML("beforeend", cardHtml);
-        } else {
-          casesTrack.insertAdjacentHTML("beforeend", cardHtml);
-        }
+        casesTrack.insertAdjacentHTML("beforeend", cardHtml);
 
-        if (timelineTrack) {
+        if (timelineTrack && index < 7) {
           const timelineHtml = `
             <div class="timeline-item">
               <div class="timeline-badge"></div>
@@ -372,6 +359,24 @@ async function loadResumeData() {
           `;
           timelineTrack.insertAdjacentHTML("beforeend", timelineHtml);
         }
+      });
+    }
+
+    if (resume.projects && osTrack) {
+      resume.projects.forEach((project) => {
+        const cardHtml = `
+          <div class="case-card">
+            <div>
+              <div class="case-meta">
+                <span>Open Source</span>
+              </div>
+              <h3>${project.name}</h3>
+              <p>${project.description}</p>
+            </div>
+            ${project.url ? `<div class="case-links" style="margin-top: 1rem"><a href="${project.url}" target="_blank" class="btn-primary">View</a></div>` : ""}
+          </div>
+        `;
+        osTrack.insertAdjacentHTML("beforeend", cardHtml);
       });
     }
 
