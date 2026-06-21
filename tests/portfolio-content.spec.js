@@ -76,7 +76,7 @@ test.describe("Portfolio Content & Structure", () => {
 
     for (let i = 0; i < expectedCasesData.length; i++) {
       const card = casesTrack.nth(i);
-      
+
       // Check Metadata
       const metaSpans = card.locator(".case-meta span");
       await expect(metaSpans).toHaveCount(2);
@@ -142,7 +142,7 @@ test.describe("Portfolio Content & Structure", () => {
 
     for (let i = 0; i < expectedOSData.length; i++) {
       const card = osTrack.nth(i);
-      
+
       // Check Metadata
       const metaSpans = card.locator(".case-meta span");
       await expect(metaSpans).toHaveCount(2);
@@ -158,7 +158,7 @@ test.describe("Portfolio Content & Structure", () => {
       for (let j = 0; j < expectedOSData[i].tags.length; j++) {
         await expect(tags.nth(j)).toHaveText(expectedOSData[i].tags[j]);
       }
-      
+
       // Check Links
       if (expectedOSData[i].hasLink) {
         const link = card.locator(".case-links a");
