@@ -315,34 +315,33 @@ async function loadResumeData() {
     const osTrack = document.getElementById("os-track");
     const timelineTrack = document.getElementById("timeline-track");
 
-    if (resume.work && casesTrack) {
-      resume.work.forEach((job, index) => {
-        let tagsHtml = "";
-        if (job.highlights) {
-          tagsHtml = `<div class="tag-list">${job.highlights
-            .slice(0, 3)
-            .map((h) => `<span class="tag">${h.split(" ")[0]}</span>`)
-            .join("")}</div>`;
-        }
+    if (resume.caseStudies && casesTrack) {
+      resume.caseStudies.forEach((caseStudy) => {
+        const tagsHtml =
+          caseStudy.tags && caseStudy.tags.length > 0
+            ? `<div class="tag-list">${caseStudy.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}</div>`
+            : "";
 
         const cardHtml = `
           <div class="case-card">
             <div>
               <div class="case-meta">
-                <span>${job.name}</span>
-                <span>${job.position}</span>
+                <span>${caseStudy.meta[0]}</span>
+                <span>${caseStudy.meta[1]}</span>
               </div>
-              <h3>${job.name}</h3>
-              <p>${job.summary}</p>
+              <h3>${caseStudy.name}</h3>
+              <p>${caseStudy.summary}</p>
             </div>
             ${tagsHtml}
-            ${job.url ? `<div class="case-links" style="margin-top: 1rem"><a href="${job.url}" target="_blank" class="btn-primary">View</a></div>` : ""}
           </div>
         `;
-
         casesTrack.insertAdjacentHTML("beforeend", cardHtml);
+      });
+    }
 
-        if (timelineTrack && index < 7) {
+    if (resume.work && timelineTrack) {
+      resume.work.forEach((job, index) => {
+        if (index < 7) {
           const timelineHtml = `
             <div class="timeline-item">
               <div class="timeline-badge"></div>
@@ -364,16 +363,30 @@ async function loadResumeData() {
 
     if (resume.projects && osTrack) {
       resume.projects.forEach((project) => {
+        const tagsHtml =
+          project.tags && project.tags.length > 0
+            ? `<div class="tag-list">${project.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}</div>`
+            : "";
+
+        let linkHtml = "";
+        if (project.url) {
+          linkHtml = project.hasGitHubLink
+            ? `<div class="case-links" style="margin-top: 1rem"><a href="${project.url}" target="_blank" class="btn-primary">View GitHub <i class="fa-brands fa-github"></i></a></div>`
+            : `<div class="case-links" style="margin-top: 1rem"><a href="${project.url}" target="_blank" class="btn-primary">View</a></div>`;
+        }
+
         const cardHtml = `
           <div class="case-card">
             <div>
               <div class="case-meta">
-                <span>Open Source</span>
+                <span>${project.meta[0]}</span>
+                <span>${project.meta[1]}</span>
               </div>
               <h3>${project.name}</h3>
               <p>${project.description}</p>
             </div>
-            ${project.url ? `<div class="case-links" style="margin-top: 1rem"><a href="${project.url}" target="_blank" class="btn-primary">View</a></div>` : ""}
+            ${tagsHtml}
+            ${linkHtml}
           </div>
         `;
         osTrack.insertAdjacentHTML("beforeend", cardHtml);
