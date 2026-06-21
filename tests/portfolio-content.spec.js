@@ -5,53 +5,167 @@ test.describe("Portfolio Content & Structure", () => {
     await page.goto("/");
   });
 
-  test("contains exactly 12 case studies with correct headers", async ({
+  test("case studies cards contain correct metadata, headings, and skill tags", async ({
     page,
   }) => {
     const casesTrack = page.locator("#cases-track .case-card");
     await expect(casesTrack).toHaveCount(12);
 
-    const expectedHeaders = [
-      "GCP & NoSQL Database Migration",
-      "GitOps & ArgoCD Migration",
-      "Web Routing Architecture",
-      "Enterprise Secrets Management",
-      "Dynamic CI Pipelines & Helm",
-      "AI-Powered Scaling Architecture",
-      "Cloud Architecture & ETL",
-      "DevOps Transformation",
-      "Next Gen TV Platform",
-      "Intelligent Traffic Platform",
-      "Platform Migration & Architecture",
-      "Legacy Systems Modernization",
+    const expectedCasesData = [
+      {
+        meta: ["METRO Digital", "GCP / NoSQL"],
+        heading: "GCP & NoSQL Database Migration",
+        tags: ["GCP", "Kustomize", "NoSQL"],
+      },
+      {
+        meta: ["METRO Digital", "GitOps / K8s"],
+        heading: "GitOps & ArgoCD Migration",
+        tags: ["ArgoCD", "GitOps", "Terraform"],
+      },
+      {
+        meta: ["METRO Digital", "Networking"],
+        heading: "Web Routing Architecture",
+        tags: ["Gateway API", "GCP PSC", "Networking"],
+      },
+      {
+        meta: ["METRO Digital", "Security"],
+        heading: "Enterprise Secrets Management",
+        tags: ["Secret Manager", "SOPS", "Security"],
+      },
+      {
+        meta: ["METRO Digital", "CI/CD Automation"],
+        heading: "Dynamic CI Pipelines & Helm",
+        tags: ["Jenkins", "Helm", "CI/CD"],
+      },
+      {
+        meta: ["Voyc AI", "AWS / EKS"],
+        heading: "AI-Powered Scaling Architecture",
+        tags: ["OpenTofu", "Karpenter", "GPU Instances"],
+      },
+      {
+        meta: ["Consulting", "GCP / Python"],
+        heading: "Cloud Architecture & ETL",
+        tags: ["Apache Airflow", "ETL", "BigQuery"],
+      },
+      {
+        meta: ["American Robotics", "AWS / Jenkins"],
+        heading: "DevOps Transformation",
+        tags: ["AWS EKS", "Terragrunt", "ArgoCD"],
+      },
+      {
+        meta: ["Media Company", "Hybrid Cloud"],
+        heading: "Next Gen TV Platform",
+        tags: ["Hybrid Cloud", "Azure DevOps", "Kafka"],
+      },
+      {
+        meta: ["Smart City", "GCP / GKE"],
+        heading: "Intelligent Traffic Platform",
+        tags: ["Smart City", "GKE", "IoT"],
+      },
+      {
+        meta: ["E-Commerce", "K8s / Ansible"],
+        heading: "Platform Migration & Architecture",
+        tags: ["Kubernetes", "Ansible", "Helm"],
+      },
+      {
+        meta: ["Global Logistics", "CI/CD"],
+        heading: "Legacy Systems Modernization",
+        tags: ["CI/CD", "Modernization", "Microservices"],
+      },
     ];
 
-    for (let i = 0; i < expectedHeaders.length; i++) {
-      await expect(casesTrack.nth(i).locator("h3")).toContainText(
-        expectedHeaders[i],
-      );
+    for (let i = 0; i < expectedCasesData.length; i++) {
+      const card = casesTrack.nth(i);
+      
+      // Check Metadata
+      const metaSpans = card.locator(".case-meta span");
+      await expect(metaSpans).toHaveCount(2);
+      await expect(metaSpans.nth(0)).toHaveText(expectedCasesData[i].meta[0]);
+      await expect(metaSpans.nth(1)).toHaveText(expectedCasesData[i].meta[1]);
+
+      // Check Heading
+      await expect(card.locator("h3")).toHaveText(expectedCasesData[i].heading);
+
+      // Check Tags
+      const tags = card.locator(".tag-list .tag");
+      await expect(tags).toHaveCount(expectedCasesData[i].tags.length);
+      for (let j = 0; j < expectedCasesData[i].tags.length; j++) {
+        await expect(tags.nth(j)).toHaveText(expectedCasesData[i].tags[j]);
+      }
     }
   });
 
-  test("contains exactly 6 open source contributions with correct headers", async ({
+  test("open source contributions contain correct metadata, headings, tags, and links", async ({
     page,
   }) => {
     const osTrack = page.locator("#os-track .case-card");
     await expect(osTrack).toHaveCount(6);
 
-    const expectedHeaders = [
-      "korn.systems Website",
-      "terraform-spaceship-github-pages",
-      "terraform-skill",
-      "agent-plugins",
-      "Cloud Foundation Toolkit",
-      "Terraform Google Modules",
+    const expectedOSData = [
+      {
+        meta: ["Owner & Author", "Portfolio Codebase"],
+        heading: "korn.systems Website",
+        tags: ["HTML/CSS/JS", "GitHub Actions", "Playwright"],
+        hasLink: false,
+      },
+      {
+        meta: ["Owner & Author", "Terraform Registry"],
+        heading: "terraform-spaceship-github-pages",
+        tags: ["Terraform", "Spaceship", "GitHub Pages"],
+        hasLink: false,
+      },
+      {
+        meta: ["Contributor", "AI Coding Agents"],
+        heading: "terraform-skill",
+        tags: ["AI Agents", "Terraform", "LLM"],
+        hasLink: true,
+      },
+      {
+        meta: ["Contributor", "AI Coding Agents"],
+        heading: "agent-plugins",
+        tags: ["AI Agents", "LSP", "LLM"],
+        hasLink: true,
+      },
+      {
+        meta: ["Google CFT", "Open Source"],
+        heading: "Cloud Foundation Toolkit",
+        tags: ["Google Org", "Automation"],
+        hasLink: true,
+      },
+      {
+        meta: ["Google CFT", "Open Source"],
+        heading: "Terraform Google Modules",
+        tags: ["Terraform Modules", "Go Tests"],
+        hasLink: true,
+      },
     ];
 
-    for (let i = 0; i < expectedHeaders.length; i++) {
-      await expect(osTrack.nth(i).locator("h3")).toContainText(
-        expectedHeaders[i],
-      );
+    for (let i = 0; i < expectedOSData.length; i++) {
+      const card = osTrack.nth(i);
+      
+      // Check Metadata
+      const metaSpans = card.locator(".case-meta span");
+      await expect(metaSpans).toHaveCount(2);
+      await expect(metaSpans.nth(0)).toHaveText(expectedOSData[i].meta[0]);
+      await expect(metaSpans.nth(1)).toHaveText(expectedOSData[i].meta[1]);
+
+      // Check Heading
+      await expect(card.locator("h3")).toHaveText(expectedOSData[i].heading);
+
+      // Check Tags
+      const tags = card.locator(".tag-list .tag");
+      await expect(tags).toHaveCount(expectedOSData[i].tags.length);
+      for (let j = 0; j < expectedOSData[i].tags.length; j++) {
+        await expect(tags.nth(j)).toHaveText(expectedOSData[i].tags[j]);
+      }
+      
+      // Check Links
+      if (expectedOSData[i].hasLink) {
+        const link = card.locator(".case-links a");
+        await expect(link).toBeAttached();
+        await expect(link).toContainText("View GitHub");
+        await expect(link.locator("i.fa-github")).toBeAttached();
+      }
     }
   });
 
