@@ -68,7 +68,7 @@ test.describe("Visual Regression Tests", () => {
     await page.addStyleTag({
       content: `
       * { scroll-behavior: auto !important; }
-      #case-studies, #open-source { height: 800px !important; max-height: 800px !important; box-sizing: border-box !important; overflow: hidden !important; border: none !important; margin: 0 !important; padding: 0 !important; }
+      #case-studies, #open-source { height: 800px !important; max-height: 800px !important; box-sizing: border-box !important; overflow: hidden !important; border: none !important; margin: 0 !important; }
       .case-card { height: 450px !important; width: 400px !important; box-sizing: border-box !important; overflow: hidden !important; }
       .pulse-dot, .network-flow, .ambient-glow-1, .ambient-glow-2 { animation: none !important; display: none !important; }
     `,
@@ -132,7 +132,7 @@ test.describe("Visual Regression Tests", () => {
     await page.addStyleTag({
       content: `
       * { scroll-behavior: auto !important; }
-      #case-studies, #open-source { height: 800px !important; max-height: 800px !important; box-sizing: border-box !important; overflow: hidden !important; border: none !important; margin: 0 !important; padding: 0 !important; }
+      #case-studies, #open-source { height: 800px !important; max-height: 800px !important; box-sizing: border-box !important; overflow: hidden !important; border: none !important; margin: 0 !important; }
       .case-card { height: 450px !important; width: 400px !important; box-sizing: border-box !important; overflow: hidden !important; }
       .pulse-dot, .network-flow, .ambient-glow-1, .ambient-glow-2 { animation: none !important; display: none !important; }
     `,
