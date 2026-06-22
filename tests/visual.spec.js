@@ -25,6 +25,7 @@ test.describe("Visual Regression Tests", () => {
     });
 
     const sections = [
+      "header",
       "hero",
       "about",
       "expertise",
