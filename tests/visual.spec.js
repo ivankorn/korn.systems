@@ -20,6 +20,7 @@ test.describe("Visual Regression Tests", () => {
     await page.addStyleTag({
       content: `
       * { scroll-behavior: auto !important; }
+      header { display: none !important; }
       .pulse-dot, .network-flow, .ambient-glow-1, .ambient-glow-2, .terminal-window { animation: none !important; display: none !important; }
     `,
     });
@@ -37,12 +38,11 @@ test.describe("Visual Regression Tests", () => {
       const section = page.locator(`#${sectionId}`);
       await section.scrollIntoViewIfNeeded();
 
-      // We mask the header to prevent the fixed header from overlapping the section in screenshots
+      // We hid the header via CSS so it doesn't overlap the section in screenshots
       await expect(section).toHaveScreenshot(
         `${sectionId}-section-layout.png`,
         {
           maxDiffPixelRatio: dynamicPixelRatio,
-          mask: [page.locator("header")],
         },
       );
     }
