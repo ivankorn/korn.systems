@@ -303,3 +303,144 @@ carousels.forEach((container) => {
     });
   }
 });
+
+// --- 7. Dynamic Resume Rendering ---
+async function loadResumeData() {
+  try {
+    const response = await fetch("/resume.json");
+    if (!response.ok) return;
+    const resume = await response.json();
+
+    const casesTrack = document.getElementById("cases-track");
+    const osTrack = document.getElementById("os-track");
+    const timelineTrack = document.getElementById("timeline-track");
+
+    if (resume.caseStudies && casesTrack) {
+      resume.caseStudies.forEach((caseStudy) => {
+        const tagsHtml =
+          caseStudy.tags && caseStudy.tags.length > 0
+            ? `<div class="tag-list">${caseStudy.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}</div>`
+            : "";
+
+        const cardHtml = `
+          <div class="case-card">
+            <div>
+              <div class="case-meta">
+                <span>${caseStudy.meta[0]}</span>
+                <span>${caseStudy.meta[1]}</span>
+              </div>
+              <h3>${caseStudy.name}</h3>
+              <p>${caseStudy.summary}</p>
+            </div>
+            ${tagsHtml}
+          </div>
+        `;
+        casesTrack.insertAdjacentHTML("beforeend", cardHtml);
+      });
+    }
+
+    if (resume.work && timelineTrack) {
+      resume.work.forEach((job, index) => {
+        if (index < 7) {
+          const timelineHtml = `
+            <div class="timeline-item">
+              <div class="timeline-badge"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">${job.startDate} – ${job.endDate || "Present"}</div>
+                <h3>${job.position}</h3>
+                <div class="timeline-company">${job.name}</div>
+                <div class="timeline-details">
+                  <ul>${job.highlights ? job.highlights.map((h) => `<li>${h}</li>`).join("") : ""}</ul>
+                </div>
+                <div class="timeline-toggle-btn">Details</div>
+              </div>
+            </div>
+          `;
+          timelineTrack.insertAdjacentHTML("beforeend", timelineHtml);
+        }
+      });
+    }
+
+    if (resume.projects && osTrack) {
+      resume.projects.forEach((project) => {
+        const tagsHtml =
+          project.tags && project.tags.length > 0
+            ? `<div class="tag-list">${project.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}</div>`
+            : "";
+
+        let linkHtml = "";
+        if (project.url) {
+          linkHtml = project.hasGitHubLink
+            ? `<div class="case-links" style="margin-top: 1rem"><a href="${project.url}" target="_blank" class="btn-primary">View GitHub <i class="fa-brands fa-github"></i></a></div>`
+            : `<div class="case-links" style="margin-top: 1rem"><a href="${project.url}" target="_blank" class="btn-primary">View</a></div>`;
+        }
+
+        const cardHtml = `
+          <div class="case-card">
+            <div>
+              <div class="case-meta">
+                <span>${project.meta[0]}</span>
+                <span>${project.meta[1]}</span>
+              </div>
+              <h3>${project.name}</h3>
+              <p>${project.description}</p>
+            </div>
+            ${tagsHtml}
+            ${linkHtml}
+          </div>
+        `;
+        osTrack.insertAdjacentHTML("beforeend", cardHtml);
+      });
+    }
+
+    const timelineContents = document.querySelectorAll(".timeline-content");
+    timelineContents.forEach((content) => {
+      content.addEventListener("click", (e) => {
+        if (e.target.tagName === "A") return;
+        const isActive = content.classList.contains("active");
+        timelineContents.forEach((c) => c.classList.remove("active"));
+        if (!isActive) content.classList.add("active");
+      });
+    });
+    if (timelineContents.length > 0)
+      timelineContents[0].classList.add("active");
+
+    initCarousels();
+  } catch (error) {
+    console.error("Error loading resume.json", error);
+  }
+}
+
+function initCarousels() {
+  const carousels = document.querySelectorAll(".carousel-container");
+  carousels.forEach((container) => {
+    const track = container.querySelector(".carousel-track");
+    const prevBtn = container.querySelector(".carousel-btn.prev");
+    const nextBtn = container.querySelector(".carousel-btn.next");
+
+    if (!track) return;
+
+    const scrollAmount = () => {
+      const card = track.querySelector(".case-card");
+      return card ? card.offsetWidth + 32 : 300;
+    };
+
+    if (nextBtn) {
+      const newNext = nextBtn.cloneNode(true);
+      nextBtn.parentNode.replaceChild(newNext, nextBtn);
+      newNext.addEventListener("click", () =>
+        track.scrollBy({ left: scrollAmount(), behavior: "smooth" }),
+      );
+    }
+
+    if (prevBtn) {
+      const newPrev = prevBtn.cloneNode(true);
+      prevBtn.parentNode.replaceChild(newPrev, prevBtn);
+      newPrev.addEventListener("click", () =>
+        track.scrollBy({ left: -scrollAmount(), behavior: "smooth" }),
+      );
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", loadResumeData);

@@ -293,38 +293,126 @@
   ],
   "projects": [
     {
-      "name": "korn.systems Portfolio",
+      "name": "korn.systems Website",
+      "meta": ["Owner & Author", "Portfolio Codebase"],
       "description": "Development, automated deployment, and open-sourcing of the personal portfolio website and AI assistant platform.",
-      "url": "https://github.com/ivankorn/korn.systems"
+      "url": "https://github.com/ivankorn/korn.systems",
+      "tags": ["HTML/CSS/JS", "GitHub Actions", "Playwright"],
+      "hasGitHubLink": false
     },
     {
       "name": "terraform-spaceship-github-pages",
+      "meta": ["Owner & Author", "Terraform Registry"],
       "description": "Owned and authored Terraform module for automated GitHub Pages and Spaceship DNS configuration.",
-      "url": "https://registry.terraform.io/modules/ivankorn/github-pages/spaceship/latest"
+      "url": "https://registry.terraform.io/modules/ivankorn/github-pages/spaceship/latest",
+      "tags": ["Terraform", "Spaceship", "GitHub Pages"],
+      "hasGitHubLink": false
     },
     {
       "name": "terraform-skill",
+      "meta": ["Contributor", "AI Coding Agents"],
       "description": "Contributed to the open-source terraform-skill plugin for AI coding agents.",
-      "url": "https://github.com/antonbabenko/terraform-skill"
+      "url": "https://github.com/antonbabenko/terraform-skill",
+      "tags": ["AI Agents", "Terraform", "LLM"],
+      "hasGitHubLink": true
     },
     {
       "name": "agent-plugins",
+      "meta": ["Contributor", "AI Coding Agents"],
       "description": "Contributed to the open-source agent-plugins repository (specifically the code-intelligence skill) for AI coding agents.",
-      "url": "https://github.com/antonbabenko/agent-plugins/tree/master"
+      "url": "https://github.com/antonbabenko/agent-plugins/tree/master",
+      "tags": ["AI Agents", "LSP", "LLM"],
+      "hasGitHubLink": true
     },
     {
       "name": "Cloud Foundation Toolkit",
+      "meta": ["Google CFT", "Open Source"],
       "description": "Contributed official Deployment Manager templates, tools, and automation scripts for Google Cloud.",
-      "url": "https://github.com/GoogleCloudPlatform/cloud-foundation-toolkit"
+      "url": "https://github.com/GoogleCloudPlatform/cloud-foundation-toolkit",
+      "tags": ["Google Org", "Automation"],
+      "hasGitHubLink": true
     },
     {
       "name": "Terraform Google Modules",
+      "meta": ["Google CFT", "Open Source"],
       "description": "Contributed official Terraform modules, tests, and automation builds for Google Cloud.",
-      "url": "https://github.com/terraform-google-modules"
+      "url": "https://github.com/terraform-google-modules",
+      "tags": ["Terraform Modules", "Go Tests"],
+      "hasGitHubLink": true
+    }
+  ],
+  "caseStudies": [
+    {
+      "meta": ["METRO Digital", "GCP / NoSQL"],
+      "name": "GCP & NoSQL Database Migration",
+      "summary": "Planned and executed the migration of a fleet of nearly a hundred microservices into GCP, and successfully migrated a critical NoSQL database to another SaaS vendor.",
+      "tags": ["GCP", "Kustomize", "NoSQL"]
     },
     {
-      "name": "GL Smart City Platform (Green Wave)",
-      "description": "Designed Kiev's Intelligent Traffic Management System deploying GKE, Cloud Functions, and Cloud Build."
+      "meta": ["METRO Digital", "GitOps / K8s"],
+      "name": "GitOps & ArgoCD Migration",
+      "summary": "Replaced internal CD tools with ArgoCD, establishing an app-of-apps pattern to manage and deploy over 100+ microservices efficiently.",
+      "tags": ["ArgoCD", "GitOps", "Terraform"]
+    },
+    {
+      "meta": ["METRO Digital", "Networking"],
+      "name": "Web Routing Architecture",
+      "summary": "Modernized web routing by replacing legacy HAProxy load balancers with secure Gateway API and GCP Private Service Connect (PSC).",
+      "tags": ["Gateway API", "GCP PSC", "Networking"]
+    },
+    {
+      "meta": ["METRO Digital", "Security"],
+      "name": "Enterprise Secrets Management",
+      "summary": "Migrated secrets to GCP Secret Manager, completely automating encryption and secure delivery pipelines using Jenkins, Terraform, and SOPS.",
+      "tags": ["Secret Manager", "SOPS", "Security"]
+    },
+    {
+      "meta": ["METRO Digital", "CI/CD Automation"],
+      "name": "Dynamic CI Pipelines & Helm",
+      "summary": "Configured dynamic Jenkins pipelines featuring automatic repository discovery, and built fully automated Helm charts for multi-cluster CI/CD.",
+      "tags": ["Jenkins", "Helm", "CI/CD"]
+    },
+    {
+      "meta": ["Voyc AI", "AWS / EKS"],
+      "name": "AI-Powered Scaling Architecture",
+      "summary": "Designed and provisioned AWS cloud architecture for AI-powered compliance monitoring. Automated complete infrastructure using OpenTofu and Karpenter.",
+      "tags": ["OpenTofu", "Karpenter", "GPU Instances"]
+    },
+    {
+      "meta": ["Consulting", "GCP / Python"],
+      "name": "Cloud Architecture & ETL",
+      "summary": "Redesigned Cloud Architecture with a 5-layer infrastructure decomposition using Terraform. Developed an ETL pipeline in Python for Google Cloud Composer.",
+      "tags": ["Apache Airflow", "ETL", "BigQuery"]
+    },
+    {
+      "meta": ["American Robotics", "AWS / Jenkins"],
+      "name": "DevOps Transformation",
+      "summary": "Planned and drove a comprehensive DevOps transformation for an American Robotics Corp, provisioning AWS infrastructure and implementing Jenkins/GitLab pipelines.",
+      "tags": ["AWS EKS", "Terragrunt", "ArgoCD"]
+    },
+    {
+      "meta": ["Media Company", "Hybrid Cloud"],
+      "name": "Next Gen TV Platform",
+      "summary": "Managed DevOps scope for a major US media company, designing a hybrid cloud architecture spanning GCP GKE and AWS EKS with Kafka integration.",
+      "tags": ["Hybrid Cloud", "Azure DevOps", "Kafka"]
+    },
+    {
+      "meta": ["Smart City", "GCP / GKE"],
+      "name": "Intelligent Traffic Platform",
+      "summary": "Designed and implemented the cloud infrastructure for Kyiv's Intelligent Traffic Management System (Green Wave), utilizing GKE and Cloud Functions.",
+      "tags": ["Smart City", "GKE", "IoT"]
+    },
+    {
+      "meta": ["E-Commerce", "K8s / Ansible"],
+      "name": "Platform Migration & Architecture",
+      "summary": "Led the infrastructure engineering and Kubernetes migration for a major multi-level marketing company, architecting Helm charts and Ansible roles.",
+      "tags": ["Kubernetes", "Ansible", "Helm"]
+    },
+    {
+      "meta": ["Global Logistics", "CI/CD"],
+      "name": "Legacy Systems Modernization",
+      "summary": "Engineered continuous delivery pipelines and optimized infrastructure for a unified front-end solution replacing 13 legacy systems for a logistics giant.",
+      "tags": ["CI/CD", "Modernization", "Microservices"]
     }
   ]
 }

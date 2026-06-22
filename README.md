@@ -13,6 +13,56 @@ The project uses GitHub Actions for continuous integration and continuous deploy
 
 ## Local Tests Process
 
+### Running Tests Locally
+
+You can run the Playwright test suite using standard `npm` commands. The framework supports separating visual regressions from structural/functional tests.
+
+1. **Run All Tests (Functional + Visual)**
+
+   ```bash
+   npm run test
+   ```
+
+2. **Run Only Non-Visual Tests**
+
+   ```bash
+   npm run test -- --grep-invert "Visual"
+   ```
+
+3. **Run Only Visual Tests**
+
+   ```bash
+   npm run test -- --grep "Visual"
+   ```
+
+4. **Update Visual Screenshots (Baselines)**
+   If you have made intentional UI changes, update the baseline reference images:
+   ```bash
+   npm run test -- --update-snapshots
+   ```
+
+### Execution Modes (Local vs. CI)
+
+The `playwright.config.js` is engineered to adapt depending on the environment:
+
+- **Local Mode (Default):**
+  - **Browsers:** Runs across **all 5 major engines**: Desktop Chromium, Firefox, WebKit (Safari), Mobile Chrome (Pixel), and Mobile Safari (iPhone).
+  - **Parallelism:** Tests are fully parallelized across all available CPU cores (`workers: undefined`).
+  - **Retries:** Disabled locally to quickly catch and debug failures.
+  - **Server:** Automatically serves the site locally and reuses an existing dev server if one is already running.
+
+- **CI Mode (Triggered automatically in GitHub Actions via `CI=true`):**
+  - **Browsers:** Runs **only on Chromium and Mobile Chrome** to drastically reduce pipeline cost, flakiness, and execution time (since local tests already verified cross-browser compatibility).
+  - **Parallelism:** Restricted to 1 worker to ensure stable rendering for visual screenshots and avoid resource starvation on standard CI runners.
+  - **Retries:** Fails are automatically retried up to 2 times to mitigate flaky network conditions.
+  - **Strictness:** Forbids `.only` annotations to prevent accidental skipped tests from being merged.
+
+You can explicitly test CI mode behavior locally by prefixing the environment variable:
+
+```bash
+CI=true npm run test
+```
+
 1. **Install node dependencies:**
 
    ```bash
