@@ -32,6 +32,7 @@ test.describe("Visual Regression Tests", () => {
       * { scroll-behavior: auto !important; }
       #case-studies, #open-source { height: 800px !important; max-height: 800px !important; box-sizing: border-box !important; overflow: hidden !important; border: none !important; margin: 0 !important; padding: 0 !important; }
       .case-card { height: 450px !important; width: 400px !important; box-sizing: border-box !important; overflow: hidden !important; }
+      .pulse-dot, .network-flow, .ambient-glow-1, .ambient-glow-2 { animation: none !important; display: none !important; }
     `,
     });
 
@@ -95,6 +96,7 @@ test.describe("Visual Regression Tests", () => {
       * { scroll-behavior: auto !important; }
       #case-studies, #open-source { height: 800px !important; max-height: 800px !important; box-sizing: border-box !important; overflow: hidden !important; border: none !important; margin: 0 !important; padding: 0 !important; }
       .case-card { height: 450px !important; width: 400px !important; box-sizing: border-box !important; overflow: hidden !important; }
+      .pulse-dot, .network-flow, .ambient-glow-1, .ambient-glow-2 { animation: none !important; display: none !important; }
     `,
     });
 
@@ -103,7 +105,6 @@ test.describe("Visual Regression Tests", () => {
 
     await expect(osSection).toHaveScreenshot("open-source-section-layout.png", {
       maxDiffPixelRatio: dynamicPixelRatio,
-      mask: [page.locator("header")],
     });
 
     const cards = page.locator("#os-track .case-card");
@@ -140,6 +141,12 @@ test.describe("Visual Regression Tests", () => {
     const dynamicPixelRatio = isWebkit ? 0.04 : 0.025;
 
     await page.goto("/ai/");
+    await page.addStyleTag({
+      content: `
+      * { scroll-behavior: auto !important; }
+      .pulse-dot, .network-flow, .ambient-glow-1, .ambient-glow-2 { animation: none !important; display: none !important; }
+    `,
+    });
     await expect(page).toHaveScreenshot("ai-page-full.png", {
       fullPage: true,
       maxDiffPixelRatio: dynamicPixelRatio,
