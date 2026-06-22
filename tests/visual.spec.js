@@ -10,6 +10,44 @@ expect.extend({
 });
 
 test.describe("Visual Regression Tests", () => {
+  test("index page sections visual layout", async ({ page }, testInfo) => {
+    const isWebkit =
+      testInfo.project.name.toLowerCase().includes("webkit") ||
+      testInfo.project.name.toLowerCase().includes("safari");
+    const dynamicPixelRatio = isWebkit ? 0.05 : 0.035;
+
+    await page.goto("/");
+    await page.addStyleTag({
+      content: `
+      * { scroll-behavior: auto !important; }
+      .pulse-dot, .network-flow, .ambient-glow-1, .ambient-glow-2, .terminal-window { animation: none !important; display: none !important; }
+    `,
+    });
+
+    const sections = [
+      "hero",
+      "about",
+      "expertise",
+      "roi-calc",
+      "experience",
+      "contact",
+    ];
+
+    for (const sectionId of sections) {
+      const section = page.locator(`#${sectionId}`);
+      await section.scrollIntoViewIfNeeded();
+
+      // We mask the header to prevent the fixed header from overlapping the section in screenshots
+      await expect(section).toHaveScreenshot(
+        `${sectionId}-section-layout.png`,
+        {
+          maxDiffPixelRatio: dynamicPixelRatio,
+          mask: [page.locator("header")],
+        },
+      );
+    }
+  });
+
   test("case studies carousel visual layout", async ({ page }, testInfo) => {
     // Increase pixel ratio tolerance for webkit-based browsers which render fonts and shapes differently
     const isWebkit =

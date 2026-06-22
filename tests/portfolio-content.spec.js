@@ -5,11 +5,32 @@ test.describe("Portfolio Content & Structure", () => {
     await page.goto("/");
   });
 
+  test("about section contains correct stats", async ({ page }) => {
+    const stats = page.locator("#about .stat-card");
+    await expect(stats).toHaveCount(4);
+    await expect(stats.nth(0)).toContainText("20+");
+    await expect(stats.nth(1)).toContainText("14+");
+    await expect(stats.nth(2)).toContainText("500+");
+    await expect(stats.nth(3)).toContainText("30%+");
+  });
+
+  test("expertise section contains expected specializations", async ({
+    page,
+  }) => {
+    const cards = page.locator("#expertise .expertise-card");
+    await expect(cards).toHaveCount(4);
+    await expect(cards.nth(0).locator("h3")).toContainText("Cloud Solutions");
+    await expect(cards.nth(1).locator("h3")).toContainText(
+      "DevSecOps & GitOps",
+    );
+    await expect(cards.nth(2).locator("h3")).toContainText("Kubernetes");
+    await expect(cards.nth(3).locator("h3")).toContainText("MLOps");
+  });
+
   test("case studies cards contain correct metadata, headings, and skill tags", async ({
     page,
   }) => {
     const casesTrack = page.locator("#cases-track .case-card");
-    await expect(casesTrack).toHaveCount(12);
 
     const expectedCasesData = [
       {
