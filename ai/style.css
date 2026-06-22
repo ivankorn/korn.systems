@@ -40,6 +40,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 body {
@@ -49,6 +50,8 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  position: relative;
+  max-width: 100%;
 }
 
 /* Custom Scrollbar */
@@ -70,7 +73,8 @@ body {
 .ambient-glow-1 {
   position: absolute;
   top: 10%;
-  left: -10%;
+  left: 0;
+  transform: translateX(-20%);
   width: 50vw;
   height: 50vw;
   background: radial-gradient(
@@ -85,7 +89,8 @@ body {
 .ambient-glow-2 {
   position: absolute;
   top: 50%;
-  right: -10%;
+  right: 0;
+  transform: translateX(20%);
   width: 50vw;
   height: 50vw;
   background: radial-gradient(
@@ -125,6 +130,7 @@ h2 .gradient-text {
     var(--text-primary) 30%,
     var(--text-secondary) 100%
   );
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -139,6 +145,7 @@ p {
     var(--accent-cyan) 0%,
     var(--accent-emerald) 100%
   );
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -619,6 +626,7 @@ nav a:hover {
 }
 
 .range-slider {
+  appearance: none;
   -webkit-appearance: none;
   width: 100%;
   height: 6px;
