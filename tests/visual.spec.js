@@ -20,7 +20,6 @@ test.describe("Visual Regression Tests", () => {
     await page.addStyleTag({
       content: `
       * { scroll-behavior: auto !important; }
-      header { display: none !important; }
       .pulse-dot, .network-flow, .ambient-glow-1, .ambient-glow-2, .terminal-window { animation: none !important; display: none !important; }
     `,
     });
