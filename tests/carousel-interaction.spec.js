@@ -24,6 +24,7 @@ test.describe("Carousel Interaction Tests", () => {
     const nextBtn = page.locator("#case-studies .carousel-btn.next");
     const prevBtn = page.locator("#case-studies .carousel-btn.prev");
 
+    await expect(page.locator("#cases-track .case-card").first()).toBeVisible();
     await track.scrollIntoViewIfNeeded();
 
     // Initial scroll position
@@ -65,6 +66,7 @@ test.describe("Carousel Interaction Tests", () => {
     const nextBtn = page.locator("#open-source .carousel-btn.next");
     const prevBtn = page.locator("#open-source .carousel-btn.prev");
 
+    await expect(page.locator("#os-track .case-card").first()).toBeVisible();
     await track.scrollIntoViewIfNeeded();
 
     // Initial scroll position

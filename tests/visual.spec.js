@@ -10,6 +10,45 @@ expect.extend({
 });
 
 test.describe("Visual Regression Tests", () => {
+  test("index page sections visual layout", async ({ page }, testInfo) => {
+    const isWebkit =
+      testInfo.project.name.toLowerCase().includes("webkit") ||
+      testInfo.project.name.toLowerCase().includes("safari");
+    const dynamicPixelRatio = isWebkit ? 0.05 : 0.035;
+
+    await page.goto("/");
+    await page.addStyleTag({
+      content: `
+      * { scroll-behavior: auto !important; }
+      header { position: absolute !important; }
+      .pulse-dot, .network-flow, .ambient-glow-1, .ambient-glow-2, .terminal-window { animation: none !important; display: none !important; }
+    `,
+    });
+
+    const sections = [
+      "header",
+      "hero",
+      "about",
+      "expertise",
+      "roi-calc",
+      "experience",
+      "contact",
+    ];
+
+    for (const sectionId of sections) {
+      const section = page.locator(`#${sectionId}`);
+      await section.scrollIntoViewIfNeeded();
+
+      // We hid the header via CSS so it doesn't overlap the section in screenshots
+      await expect(section).toHaveScreenshot(
+        `${sectionId}-section-layout.png`,
+        {
+          maxDiffPixelRatio: dynamicPixelRatio,
+        },
+      );
+    }
+  });
+
   test("case studies carousel visual layout", async ({ page }, testInfo) => {
     // Increase pixel ratio tolerance for webkit-based browsers which render fonts and shapes differently
     const isWebkit =
@@ -30,8 +69,10 @@ test.describe("Visual Regression Tests", () => {
     await page.addStyleTag({
       content: `
       * { scroll-behavior: auto !important; }
-      #case-studies, #open-source { height: 800px !important; max-height: 800px !important; box-sizing: border-box !important; overflow: hidden !important; border: none !important; margin: 0 !important; padding: 0 !important; }
+      header { position: absolute !important; }
+      #case-studies, #open-source { height: 800px !important; max-height: 800px !important; box-sizing: border-box !important; overflow: hidden !important; border: none !important; margin: 0 !important; }
       .case-card { height: 450px !important; width: 400px !important; box-sizing: border-box !important; overflow: hidden !important; }
+      .pulse-dot, .network-flow, .ambient-glow-1, .ambient-glow-2 { animation: none !important; display: none !important; }
     `,
     });
 
@@ -47,7 +88,6 @@ test.describe("Visual Regression Tests", () => {
     // Test every single item visually
     const cards = page.locator("#cases-track .case-card");
     const count = await cards.count();
-    const nextBtn = page.locator("#case-studies .carousel-btn.next");
 
     for (let i = 0; i < count; i++) {
       // Ensure the card is fully in view by directly setting scrollLeft to avoid Safari snap hangs
@@ -94,8 +134,10 @@ test.describe("Visual Regression Tests", () => {
     await page.addStyleTag({
       content: `
       * { scroll-behavior: auto !important; }
-      #case-studies, #open-source { height: 800px !important; max-height: 800px !important; box-sizing: border-box !important; overflow: hidden !important; border: none !important; margin: 0 !important; padding: 0 !important; }
+      header { position: absolute !important; }
+      #case-studies, #open-source { height: 800px !important; max-height: 800px !important; box-sizing: border-box !important; overflow: hidden !important; border: none !important; margin: 0 !important; }
       .case-card { height: 450px !important; width: 400px !important; box-sizing: border-box !important; overflow: hidden !important; }
+      .pulse-dot, .network-flow, .ambient-glow-1, .ambient-glow-2 { animation: none !important; display: none !important; }
     `,
     });
 
@@ -140,6 +182,12 @@ test.describe("Visual Regression Tests", () => {
     const dynamicPixelRatio = isWebkit ? 0.04 : 0.025;
 
     await page.goto("/ai/");
+    await page.addStyleTag({
+      content: `
+      * { scroll-behavior: auto !important; }
+      .pulse-dot, .network-flow, .ambient-glow-1, .ambient-glow-2 { animation: none !important; display: none !important; }
+    `,
+    });
     await expect(page).toHaveScreenshot("ai-page-full.png", {
       fullPage: true,
       maxDiffPixelRatio: dynamicPixelRatio,
