@@ -73,7 +73,8 @@ body {
 .ambient-glow-1 {
   position: absolute;
   top: 10%;
-  left: -10%;
+  left: 0;
+  transform: translateX(-20%);
   width: 50vw;
   height: 50vw;
   background: radial-gradient(
@@ -88,7 +89,8 @@ body {
 .ambient-glow-2 {
   position: absolute;
   top: 50%;
-  right: -10%;
+  right: 0;
+  transform: translateX(20%);
   width: 50vw;
   height: 50vw;
   background: radial-gradient(
