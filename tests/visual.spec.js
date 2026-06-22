@@ -47,7 +47,6 @@ test.describe("Visual Regression Tests", () => {
     // Test every single item visually
     const cards = page.locator("#cases-track .case-card");
     const count = await cards.count();
-    const nextBtn = page.locator("#case-studies .carousel-btn.next");
 
     for (let i = 0; i < count; i++) {
       // Ensure the card is fully in view by directly setting scrollLeft to avoid Safari snap hangs
