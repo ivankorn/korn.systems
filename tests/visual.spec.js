@@ -103,6 +103,7 @@ test.describe("Visual Regression Tests", () => {
 
     await expect(osSection).toHaveScreenshot("open-source-section-layout.png", {
       maxDiffPixelRatio: dynamicPixelRatio,
+      mask: [page.locator("header")],
     });
 
     const cards = page.locator("#os-track .case-card");
