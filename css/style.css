@@ -1153,6 +1153,12 @@ footer {
   }
 
   /* Header Navigation */
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100vw;
+  }
+
   .availability-badge .badge-text {
     display: none;
   }
@@ -1176,6 +1182,10 @@ footer {
     justify-content: center;
     padding: 0.5rem;
     z-index: 100;
+  }
+  
+  .mobile-menu-toggle svg {
+    stroke: #f8fafc !important;
   }
 
   nav[aria-label="Main Navigation"] ul {
