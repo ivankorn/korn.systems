@@ -9,7 +9,7 @@ test.describe("Portfolio Content & Structure", () => {
     const stats = page.locator("#about .stat-card");
     await expect(stats).toHaveCount(4);
     await expect(stats.nth(0)).toContainText("20+");
-    await expect(stats.nth(1)).toContainText("14+");
+    await expect(stats.nth(1)).toContainText("15+");
     await expect(stats.nth(2)).toContainText("500+");
     await expect(stats.nth(3)).toContainText("30%+");
   });
