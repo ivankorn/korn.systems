@@ -269,6 +269,11 @@ document.addEventListener("DOMContentLoaded", () => {
         mainNavUl.classList.remove("active");
       });
     });
+
+    // Ensure menu closes on hash navigation (fixes mobile browser quirks)
+    window.addEventListener("hashchange", () => {
+      mainNavUl.classList.remove("active");
+    });
   }
 });
 
@@ -406,6 +411,15 @@ async function loadResumeData() {
       timelineContents[0].classList.add("active");
 
     initCarousels();
+
+    // If there is a hash in the URL on initial page load, correct the scroll position
+    // now that all dynamic content has been injected and layout has expanded.
+    if (window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        target.scrollIntoView();
+      }
+    }
   } catch (error) {
     console.error("Error loading resume.json", error);
   }
@@ -443,4 +457,6 @@ function initCarousels() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", loadResumeData);
+// Execute synchronously during HTML parsing (since main.js is at the bottom of the body).
+// This completely prevents layout shifts from breaking native anchor jumps in Firefox.
+loadResumeData();

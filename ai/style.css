@@ -58,13 +58,16 @@ body {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--bg-primary);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--bg-tertiary);
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-cyan);
 }
@@ -170,8 +173,9 @@ p {
 }
 
 section {
-  padding: 6rem 0;
+  padding: 1rem 0;
   position: relative;
+  scroll-margin-top: 0.5rem;
 }
 
 /* Header & Navigation */
@@ -261,9 +265,11 @@ nav a:hover {
   0% {
     box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
   }
+
   70% {
     box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
   }
+
   100% {
     box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
   }
@@ -384,12 +390,15 @@ nav a:hover {
   height: 12px;
   border-radius: 50%;
 }
+
 .t-close {
   background-color: #ef4444;
 }
+
 .t-min {
   background-color: #eab308;
 }
+
 .t-max {
   background-color: #22c55e;
 }
@@ -942,6 +951,7 @@ nav a:hover {
   margin: 0;
   font-size: 0.85rem;
   color: var(--text-muted);
+  word-break: break-word;
 }
 
 .scheduling-panel {
@@ -1117,7 +1127,8 @@ footer {
   }
 
   nav {
-    display: none; /* simple burger menu could be implemented, keeping simple for mobile */
+    display: none;
+    /* simple burger menu could be implemented, keeping simple for mobile */
   }
 
   .hero {
@@ -1157,5 +1168,9 @@ footer {
     flex-direction: column;
     gap: 1.5rem;
     text-align: center;
+  }
+
+  .scheduling-panel {
+    padding: 2rem 1.5rem;
   }
 }

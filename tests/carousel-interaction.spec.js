@@ -8,6 +8,8 @@ test.describe("Carousel Interaction Tests", () => {
   test("case studies carousel should scroll when next and prev buttons are clicked", async ({
     page,
   }) => {
+    // Force a narrow viewport so the cards overflow and can scroll
+    await page.setViewportSize({ width: 500, height: 800 });
     await page.addInitScript(() => {
       const originalScrollBy = Element.prototype.scrollBy;
       Element.prototype.scrollBy = function (options) {
@@ -50,6 +52,8 @@ test.describe("Carousel Interaction Tests", () => {
   test("open source carousel should scroll when next and prev buttons are clicked", async ({
     page,
   }) => {
+    // Force a narrow viewport so the 3 open source cards actually overflow and can scroll
+    await page.setViewportSize({ width: 500, height: 800 });
     await page.addInitScript(() => {
       const originalScrollBy = Element.prototype.scrollBy;
       Element.prototype.scrollBy = function (options) {
@@ -68,6 +72,9 @@ test.describe("Carousel Interaction Tests", () => {
 
     await expect(page.locator("#os-track .case-card").first()).toBeVisible();
     await track.scrollIntoViewIfNeeded();
+
+    // Wait for the layout to stabilize
+    await page.waitForTimeout(500);
 
     // Initial scroll position
     const initialScroll = await track.evaluate((node) => node.scrollLeft);
